@@ -21,14 +21,14 @@ Known issues:
 -- Not all Wikipedia pages have instance of lake
 
 Resources:
-https://en.wikipedia.org/w/api.php
-https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes/Assessment
-Wikidata ideal lake content that should be queryable: https://www.wikidata.org/wiki/Wikidata:WikiProject_Lakes
-https://en.wikipedia.org/wiki/Template:Infobox_body_of_water
+https://en.wikipedia.org/w/api.php<b/r>
+https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes/Assessment<b/r>
+Wikidata ideal lake content that should be queryable: https://www.wikidata.org/wiki/Wikidata:WikiProject_Lakes<b/r>
+https://en.wikipedia.org/wiki/Template:Infobox_body_of_water<b/r>
 
 
-Example Wikidata Item: https://www.wikidata.org/wiki/Q4738340
-Example Wikipedia Page: https://en.wikipedia.org/wiki/Alvord_Lake_(Arizona)
+Example Wikidata Item: https://www.wikidata.org/wiki/Q4738340<b/r>
+Example Wikipedia Page: https://en.wikipedia.org/wiki/Alvord_Lake_(Arizona)<b/r>
 
 Notes
 Scope of articles by quality and importance:
