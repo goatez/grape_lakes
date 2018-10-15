@@ -1,7 +1,6 @@
-#https://rdflib.github.io/sparqlwrapper/
+# https://rdflib.github.io/sparqlwrapper/
 
-from SPARQLWrapper import SPARQLWrapper, JSON
-
+# wikidata query for all the lakes in the US
 sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
 sparql.setQuery("""SELECT ?instance_of ?instance_ofLabel ?country ?countryLabel WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
