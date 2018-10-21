@@ -1,4 +1,5 @@
 # https://rdflib.github.io/sparqlwrapper/
+# wikidata query: http://tinyurl.com/y97cvhb4
 
 from SPARQLWrapper import SPARQLWrapper, JSON
 
@@ -26,3 +27,5 @@ results = sparql.query().convert()
 
 for result in results["results"]["bindings"]:
     print(result)
+
+# save to file
