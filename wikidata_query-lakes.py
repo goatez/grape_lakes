@@ -7,7 +7,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
 sparql.setQuery("""#List of all the lakes in US
 PREFIX schema: <http://schema.org/>
-SELECT ?lake ?article ?coordinate_location ?GNIS_ID ?GeoNames_ID ?lake_inflows ?lake_outflow
+SELECT ?lakeLabel ?lake ?article ?coordinate_location ?GNIS_ID ?GeoNames_ID ?lake_inflows ?lake_outflow
 WHERE {
   ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   ?lake wdt:P17 wd:Q30.
@@ -23,7 +23,8 @@ WHERE {
 }
 LIMIT 10""")
 sparql.setReturnFormat(JSON)
-results = sparql.query().convert()
+
+results = sparql.query().convert() # here lies my issue
 
 for result in results["results"]["bindings"]:
     print(result)
