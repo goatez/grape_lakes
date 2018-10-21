@@ -10,9 +10,9 @@ os.getcwd()
 # title = "&titles="
 # prop = "&prop="
 # format = "&format="
-# example:  ?action=query&titles=Lake_Erie&prop=info&imlimit=10&format=json
+# example:  ?action=query&titles=Lake_Erie&prop=info&format=json
 
-url = "https://en.wikipedia.org/w/api.php?action=query&titles=Lake_Erie&prop=info&imlimit=10&format=json"
+url = "https://en.wikipedia.org/w/api.php?action=query&titles=Lake_Erie&prop=info&format=json"
 
 address = urllib.request.urlopen(url)
 data = address.read().decode()
