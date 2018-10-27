@@ -82,24 +82,24 @@ wikipediapct = ("{:.2f}".format((wikipedia/(count) *100))+"%")  # percentage of 
 coordpct = ("{:.2f}".format((coordinates/(count) *100))+"%")   # percentage of lages with given coordinates
 
 # print descriptive statistics
-print("Total number of lakes in Mediawiki query:", (count-1), \
+print("Total number of lakes in Mediawiki query:", (count), \
       "\n-----------------------------------------\n"+ \
-      "Total number of Lake Labels:", lakeLabel, "out of", (count-1), \
+      "Total number of Lake Labels:", lakeLabel, "out of", (count), \
       "\nPercentage of Lake Labels:", lakepct, \
       "\n-----------------------------------------\n"+ \
-      "Total number of GNIS IDs:", gnis, "out of", (count-1), \
+      "Total number of GNIS IDs:", gnis, "out of", (count), \
       "\nPercentage of GNIS IDs:", gnispct, \
       "\n-----------------------------------------\n"+ \
-      "Total number of Geo Name IDs:", geoname, "out of", (count-1), \
+      "Total number of Geo Name IDs:", geoname, "out of", (count), \
       "\nPercentage of Geo Name IDs:", geopct, \
       "\n-----------------------------------------\n"+ \
-      "Total number of Mediawiki entries:", mediawiki, "out of", (count-1), \
+      "Total number of Mediawiki entries:", mediawiki, "out of", (count), \
       "\nPercentage of Mediawiki entries:", mediawikipct, \
       "\n-----------------------------------------\n"+ \
-      "Total number of Wikipedia articles:", wikipedia, "out of", (count-1), \
+      "Total number of Wikipedia articles:", wikipedia, "out of", (count), \
       "\nPercentage of Wikipedia pages:", wikipediapct, \
       "\n-----------------------------------------\n"+ \
-      "Total number of coordinates given:", coordinates, "out of", (count-1), \
+      "Total number of coordinates given:", coordinates, "out of", (count), \
       "\nPercentage of given coordinates:", coordpct)
 
 #################################TESTING#################################
