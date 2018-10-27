@@ -31,7 +31,7 @@ results = sparql.query().convert() # here lies my issue
 #     print(result)
 
 
-count=1
+count=0
 lakeLabel=0
 gnis=0
 geoname=0
@@ -41,7 +41,7 @@ coordinates=0
 
 for lake in results["results"]["bindings"]:
     try:
-        print("Number:", count)
+        print("Number:", (count+1))
         count+=1
         print("Lake Name:", lake["lakeLabel"]["value"])  # Lake name
         lakeLabel+=1
@@ -68,30 +68,41 @@ for lake in results["results"]["bindings"]:
     except KeyError:
         pass  # key not present
     try:
-        print("Coordiantes:", lake["coordinate_location"]["value"].strip('Point()').split()) # coordinates
+        print("Coordiantes:", lake["coordinate_location"]["value"].strip('Point()').split()) # coordinates => long and lat split and saved as a list
         coordinates+=1
         print("---------------------")
     except KeyError:
         pass  # key not present
 
+lakepct = ("{:.2f}".format((lakeLabel/(count) *100))+"%")   # percentage of lakes labeled
+gnispct = ("{:.2f}".format((gnis/(count) *100))+"%")   # percentage of lakes with gnis IDs
+geopct = ("{:.2f}".format((geoname/(count) *100))+"%")    # percentage of lakes with geo name IDs
+mediawikipct = ("{:.2f}".format((mediawiki/(count) *100))+"%")   # percentage of lakes with mediawiki entries
+wikipediapct = ("{:.2f}".format((wikipedia/(count) *100))+"%")  # percentage of lakes with wikipedia articles
+coordpct = ("{:.2f}".format((coordinates/(count) *100))+"%")   # percentage of lages with given coordinates
 
-lakepct = ("{:.2f}".format((lakeLabel/count *100))+"%")   # percentage of lakes labeled
-gnispct = ("{:.2f}".format((gnis/count *100))+"%")   # percentage of lakes with gnis IDs
-geopct = ("{:.2f}".format((geoname/count *100))+"%")    # percentage of lakes with geo name IDs
-mediawikipct = ("{:.2f}".format((mediawiki/count *100))+"%")   # percentage of lakes with mediawiki entries
-wikipediapct = ("{:.2f}".format((wikipedia/count *100))+"%")  # percentage of lakes with wikipedia articles
-coordpct = ("{:.2f}".format((coordinates/count *100))+"%")   # percentage of lages with given coordinates
+# print descriptive statistics
+print("Total number of lakes in Mediawiki query:", (count-1), \
+      "\n-----------------------------------------\n"+ \
+      "Total number of Lake Labels:", lakeLabel, "out of", (count-1), \
+      "\nPercentage of Lake Labels:", lakepct, \
+      "\n-----------------------------------------\n"+ \
+      "Total number of GNIS IDs:", gnis, "out of", (count-1), \
+      "\nPercentage of GNIS IDs:", gnispct, \
+      "\n-----------------------------------------\n"+ \
+      "Total number of Geo Name IDs:", geoname, "out of", (count-1), \
+      "\nPercentage of Geo Name IDs:", geopct, \
+      "\n-----------------------------------------\n"+ \
+      "Total number of Mediawiki entries:", mediawiki, "out of", (count-1), \
+      "\nPercentage of Mediawiki entries:", mediawikipct, \
+      "\n-----------------------------------------\n"+ \
+      "Total number of Wikipedia articles:", wikipedia, "out of", (count-1), \
+      "\nPercentage of Wikipedia pages:", wikipediapct, \
+      "\n-----------------------------------------\n"+ \
+      "Total number of coordinates given:", coordinates, "out of", (count-1), \
+      "\nPercentage of given coordinates:", coordpct)
 
-
-print("Total number of Lake labels:", lakeLabel, "\nPercentage of Lake Labels:", lakepct)
-print("\nTotal number of GNIS IDs:", gnis, "\nPercentage of GNIS IDs:", gnispct)
-print("\nTotal number of Geo Name IDs:", geoname, "\nPercentage of Geo Name IDs:", geopct)
-print("\nTotal number of Mediawiki entries:", mediawiki, "\nPercentage of Mediawiki entries:", mediawikipct)
-print("\nTotal number of Wikipedia articles:", wikipedia, "\nPercentage of Wikipedia pages:", wikipediapct)
-print("\nTotal number of coordinates given:", coordinates, "\nPercentage of given coordinates:", coordpct)
-
-
-##############################################################################
+#################################TESTING#################################
 
 
 # coord = results["results"]["bindings"][3]["coordinate_location"]['value'] #example
