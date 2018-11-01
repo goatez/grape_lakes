@@ -31,43 +31,59 @@ results = sparql.query().convert() # here lies my issue
 #     print(result)
 
 
-count=0
-# lakeLabel=0
-# gnis=0
-# geoname=0
-# mediawiki=0
-# wikipedia=0
-# coordinates=0
-
-lake_format = [["Lake Name:", "lakeLabel", "value"], \
-               ["GNIS ID:", "GNIS_ID", "value"], \
-               ["Geo Name ID:", "GeoNames_ID", "value"], \
-               ["Wikipedia URL:", "article", "value"], \
-               ["Mediawiki URL:", "lake", "value"], \
-               ["Coordiantes:", "coordinate_location", "value"]]
+# lake_format = [["Lake Name:", "lakeLabel", "value"], \
+#                ["GNIS ID:", "GNIS_ID", "value"], \
+#                ["Geo Name ID:", "GeoNames_ID", "value"], \
+#                ["Wikipedia URL:", "article", "value"], \
+#                ["Mediawiki URL:", "lake", "value"], \
+#                ["Coordiantes:", "coordinate_location", "value"]]
 
 
-
-lake_haves = []
-lake_have_nots = []
-lake_dict ={}
-
-for lake in results["results"]["bindings"]:
-    for properties in lake_format:
-
-        try:
             # print(properties[0], lake[properties[1]][properties[2]])
             # lake_haves.append(lake[properties[1]][properties[2]])
             # lake_dict[lake["lakeLabel"]["value"]] = lake_haves  #this work
 
-            lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
-                                                     "gnis" : lake["GNIS_ID"]["value"], \
-                                                     "geoname : lake["GeoNames_ID"]["value"], \
-                                                     }  #this works
-           
+            # lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
+            #                                          "gnis" : lake["GNIS_ID"]["value"], \
+            #                                          "geoname" : lake["GeoNames_ID"]["value"], \
+            #                                          "wikipedia" : lake["article"]["value"], \
+            #                                          "mediawiki" : lake["lake"]["value"], \
+            #                                          "coordinates" : lake["coordinate_location"]["value"]
+            #                                          }  #this works
 
-            # properties[3]+=1
-            # count+=1lake[properties[1]
-        except KeyError:
-            pass  # key not present
-print(lake_dict)
+
+lake_dict ={}
+
+for lake in results["results"]["bindings"]:
+    try:
+#       PUT COMMENTED OUT CODE ABOVE HERE,YA BIG DUMMY
+        lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
+    except KeyError:
+        lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : None }
+    try:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : lake["GNIS_ID"]["value"] })
+    except KeyError:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : None })
+    try:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : lake["GeoNames_ID"]["value"] })
+    except KeyError:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : None })
+    try:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : lake["article"]["value"] })
+    except KeyError:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : None })
+    try:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : lake["lake"]["value"] })
+    except KeyError:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : None })
+    try:
+        c = list(map(float, lake["coordinate_location"]["value"].strip('Point()').split()))
+        coord = [{"lat" : c[0], "long" : c[1]}, c]
+        lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : coord })
+    except KeyError:
+        lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : None })
+
+
+
+for lake in lake_dict:
+    print(lake_dict[lake])
