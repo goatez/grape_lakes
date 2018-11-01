@@ -32,28 +32,42 @@ results = sparql.query().convert() # here lies my issue
 
 
 count=0
-lakeLabel=0
-gnis=0
-geoname=0
-mediawiki=0
-wikipedia=0
-coordinates=0
+# lakeLabel=0
+# gnis=0
+# geoname=0
+# mediawiki=0
+# wikipedia=0
+# coordinates=0
 
-lake_format = [["Lake Name:", "lakeLabel", "value", lakeLabel], \
-               ["GNIS ID:", "GNIS_ID", "value", gnis], \
-               ["Geo Name ID:", "GNIS_ID", "value", geoname], \
-               ["Wikipedia URL:", "article", "value", wikipedia], \
-               ["Mediawiki URL:", "lake", "value", mediawiki], \
-               ["Coordiantes:", "coordinate_location", "value", coordinates]]
+lake_format = [["Lake Name:", "lakeLabel", "value"], \
+               ["GNIS ID:", "GNIS_ID", "value"], \
+               ["Geo Name ID:", "GeoNames_ID", "value"], \
+               ["Wikipedia URL:", "article", "value"], \
+               ["Mediawiki URL:", "lake", "value"], \
+               ["Coordiantes:", "coordinate_location", "value"]]
+
+
+
+lake_haves = []
+lake_have_nots = []
+lake_dict ={}
 
 for lake in results["results"]["bindings"]:
     for properties in lake_format:
 
         try:
-            print(properties[0], lake[properties[1]][properties[2]])  # Lake name
-            properties[3]+=1
+            # print(properties[0], lake[properties[1]][properties[2]])
+            # lake_haves.append(lake[properties[1]][properties[2]])
+            # lake_dict[lake["lakeLabel"]["value"]] = lake_haves  #this work
 
+            lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
+                                                     "gnis" : lake["GNIS_ID"]["value"], \
+                                                     "geoname : lake["GeoNames_ID"]["value"], \
+                                                     }  #this works
+           
+
+            # properties[3]+=1
+            # count+=1lake[properties[1]
         except KeyError:
             pass  # key not present
-
-    print("next entry")
+print(lake_dict)
