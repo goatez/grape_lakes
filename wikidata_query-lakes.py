@@ -31,111 +31,69 @@ results = sparql.query().convert() # here lies my issue
 #     print(result)
 
 
-count=0
-lakeLabel=0
-gnis=0
-geoname=0
-mediawiki=0
-wikipedia=0
-coordinates=0
+# count=0
+# lakeLabel=0
+# gnis=0
+# geoname=0
+# mediawiki=0
+# wikipedia=0
+# coordinates=0
+
+# lake_format = [["Lake Name:", "lakeLabel", "value"], \
+#                ["GNIS ID:", "GNIS_ID", "value"], \
+#                ["Geo Name ID:", "GeoNames_ID", "value"], \
+#                ["Wikipedia URL:", "article", "value"], \
+#                ["Mediawiki URL:", "lake", "value"], \
+#                ["Coordiantes:", "coordinate_location", "value"]]
+
+
+            # print(properties[0], lake[properties[1]][properties[2]])
+            # lake_haves.append(lake[properties[1]][properties[2]])
+            # lake_dict[lake["lakeLabel"]["value"]] = lake_haves  #this work
+
+            # lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
+            #                                          "gnis" : lake["GNIS_ID"]["value"], \
+            #                                          "geoname" : lake["GeoNames_ID"]["value"], \
+            #                                          "wikipedia" : lake["article"]["value"], \
+            #                                          "mediawiki" : lake["lake"]["value"], \
+            #                                          "coordinates" : lake["coordinate_location"]["value"]
+            #                                          }  #this works
+
+
+lake_dict ={}
 
 for lake in results["results"]["bindings"]:
+
     try:
-        print("Number:", (count+1))
-        count+=1
-        print("Lake Name:", lake["lakeLabel"]["value"])  # Lake name
-        lakeLabel+=1
+#       PUT COMMENTED OUT CODE ABOVE HERE,YA BIG DUMMY
+        lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
     except KeyError:
-        pass  # key not present
+        lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : None }
     try:
-        print("GNIS ID:", lake["GNIS_ID"]["value"])  # GNIS ID
-        gnis+=1
+        lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : lake["GNIS_ID"]["value"] })
     except KeyError:
-        pass  # key not present
+        lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : None })
     try:
-        print("Geo Name ID:", lake["GeoNames_ID"]["value"])  #Geo Name ID
-        geoname+=1
+        lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : lake["GeoNames_ID"]["value"] })
     except KeyError:
-        pass  # key not present
+        lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : None })
     try:
-        print("Mediawiki URL:", lake["lake"]["value"])  # wikidata entry
-        mediawiki+=1
+        lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : lake["article"]["value"] })
     except KeyError:
-        pass  # key not present
+        lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : None })
     try:
-        print("Wikipedia URL:", lake["article"]["value"]) #wikipedia entry
-        wikipedia+=1
+        lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : lake["lake"]["value"] })
     except KeyError:
-        pass  # key not present
+        lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : None })
     try:
-        print("Coordiantes:", lake["coordinate_location"]["value"].strip('Point()').split()) # coordinates => long and lat split and saved as a list
-        coordinates+=1
-        print("---------------------")
+        c = list(map(float, lake["coordinate_location"]["value"].strip('Point()').split()))
+        coord = [{"lat" : c[0], "long" : c[1]}, c]
+        lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : coord })
     except KeyError:
-        pass  # key not present
+        lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : None })
 
-lakepct = ("{:.2f}".format((lakeLabel/(count) *100))+"%")   # percentage of lakes labeled
-gnispct = ("{:.2f}".format((gnis/(count) *100))+"%")   # percentage of lakes with gnis IDs
-geopct = ("{:.2f}".format((geoname/(count) *100))+"%")    # percentage of lakes with geo name IDs
-mediawikipct = ("{:.2f}".format((mediawiki/(count) *100))+"%")   # percentage of lakes with mediawiki entries
-wikipediapct = ("{:.2f}".format((wikipedia/(count) *100))+"%")  # percentage of lakes with wikipedia articles
-coordpct = ("{:.2f}".format((coordinates/(count) *100))+"%")   # percentage of lages with given coordinates
+#print(lake_dict)
+#print(len(lake_dict))
 
-# print descriptive statistics
-print("Total number of lakes in Mediawiki query:", (count), \
-      "\n-----------------------------------------\n"+ \
-      "Total number of Lake Labels:", lakeLabel, "out of", (count), \
-      "\nPercentage of Lake Labels:", lakepct, \
-      "\n-----------------------------------------\n"+ \
-      "Total number of GNIS IDs:", gnis, "out of", (count), \
-      "\nPercentage of GNIS IDs:", gnispct, \
-      "\n-----------------------------------------\n"+ \
-      "Total number of Geo Name IDs:", geoname, "out of", (count), \
-      "\nPercentage of Geo Name IDs:", geopct, \
-      "\n-----------------------------------------\n"+ \
-      "Total number of Mediawiki entries:", mediawiki, "out of", (count), \
-      "\nPercentage of Mediawiki entries:", mediawikipct, \
-      "\n-----------------------------------------\n"+ \
-      "Total number of Wikipedia articles:", wikipedia, "out of", (count), \
-      "\nPercentage of Wikipedia pages:", wikipediapct, \
-      "\n-----------------------------------------\n"+ \
-      "Total number of coordinates given:", coordinates, "out of", (count), \
-      "\nPercentage of given coordinates:", coordpct)
-
-#################################TESTING#################################
-
-
-# coord = results["results"]["bindings"][3]["coordinate_location"]['value'] #example
-# coord = coord.strip('Point()').split()  #stripping coordinates
-# print(coord)
-
-# # save headings
-# headings = results['head']['vars']
-# print(headings)
-
-# # save as json file
-# json = json.dumps(results)
-# f = open("results.json", "w")
-# f.write(json)
-# f.close()
-
-# # save as text file
-# f = open("results.txt", "w")
-# f.write(str(results))
-# f.close()
-
-# # save as a list of dictionaries
-# results1 = results["results"]["bindings"]
-# for result1 in results1:
-#     print(result1)
-# print(results1)
-
-
-# f = open("results1.txt", "w")
-# for line in results:
-#     f.write(str(results))
-# f.close()
-#
-# with open("myfile.txt", "w") as f:
-#     for key, value in results.items():
-#         f.write('%s:%s\n' % (key, value))
+for lake in lake_dict:
+    print(lake_dict[lake])
