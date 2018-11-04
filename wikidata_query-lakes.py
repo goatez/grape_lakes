@@ -54,6 +54,7 @@ for result in results["results"]["bindings"]:
             # lake_haves.append(lake[properties[1]][properties[2]])
             # lake_dict[lake["lakeLabel"]["value"]] = lake_haves  #this work
 
+      
             # lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
             #                                          "gnis" : lake["GNIS_ID"]["value"], \
             #                                          "geoname" : lake["GeoNames_ID"]["value"], \
@@ -66,32 +67,34 @@ for result in results["results"]["bindings"]:
 lake_dict ={}
 
 for lake in results["results"]["bindings"]:
+
     try:
 #       PUT COMMENTED OUT CODE ABOVE HERE,YA BIG DUMMY
         lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : None }
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : lake["GNIS_ID"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : None })
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : lake["GeoNames_ID"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : None })
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : lake["article"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : None })
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikidata_link" : lake["lake"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikidata_link" : None })
     try:
         c = list(map(float, lake["coordinate_location"]["value"].strip('Point()').split()))
         coord = [{"lat" : c[0], "long" : c[1]}, c]
         lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : coord })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : None })
 
 # pprint.pprint(lake_dict)
+
