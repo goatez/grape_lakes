@@ -3,32 +3,43 @@
 
 from SPARQLWrapper import SPARQLWrapper, JSON
 import json
+import pprint
 
 # wikidata query for all the lakes in the US
 sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
 sparql.setQuery("""#List of all the lakes in US
 PREFIX schema: <http://schema.org/>
-SELECT ?lakeLabel ?lake ?article ?coordinate_location ?GNIS_ID ?GeoNames_ID ?lake_inflows ?lake_outflow
-WHERE {
+SELECT ?lake ?article ?coordinate_location ?lake_inflows ?lake_outflow ?elevation_above_sea_level ?area ?length ?width ?volume_as_quantity ?watershed_area ?perimeter ?residence_time_of_water ?vertical_depth ?GNIS_ID WHERE {
   ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   ?lake wdt:P17 wd:Q30.
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-  OPTIONAL { ?article schema:about ?lake.
-             ?article schema:inLanguage "en".
-             ?article schema:isPartOf <https://en.wikipedia.org/>. }
+  OPTIONAL {
+    ?article schema:about ?lake.
+    ?article schema:inLanguage "en".
+    ?article schema:isPartOf <https://en.wikipedia.org/>.
+  }
   OPTIONAL { ?lake wdt:P625 ?coordinate_location. }
+  OPTIONAL { ?lake wdt:P200 ?lake_inflows. }
+  OPTIONAL { ?lake wdt:P201 ?lake_outflow. }
+  OPTIONAL { ?lake wdt:P2044 ?elevation_above_sea_level. }
+  OPTIONAL { ?lake wdt:P2046 ?area. }
+  OPTIONAL { ?lake wdt:P2043 ?length. }
+  OPTIONAL { ?lake wdt:P2049 ?width. }
+  OPTIONAL { ?lake wdt:P2234 ?volume_as_quantity. }
+  OPTIONAL { ?lake wdt:P2053 ?watershed_area. }
+  OPTIONAL { ?lake wdt:P2547 ?perimeter. }
+  OPTIONAL { ?lake wdt:P3020 ?residence_time_of_water. }
+  OPTIONAL { ?lake wdt:P4511 ?vertical_depth. }
   OPTIONAL { ?lake wdt:P590 ?GNIS_ID. }
-  OPTIONAL { ?lake wdt:P1566 ?GeoNames_ID. }
-  # OPTIONAL { ?lake wdt:P200 ?lake_inflows. }
-  # OPTIONAL { ?lake wdt:P201 ?lake_outflow. }
+  OPTIONAL { ?lake wdt:P625 ?coordinate_location. }
 }
-LIMIT 30""")
+LIMIT 100""")
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert() # here lies my issue
 
-# for result in results["results"]["bindings"]:
-#     print(result)
+for result in results["results"]["bindings"]:
+    pprint.pprint(result)
 
 
 # lake_format = [["Lake Name:", "lakeLabel", "value"], \
@@ -73,9 +84,9 @@ for lake in results["results"]["bindings"]:
     except KeyError:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : None })
     try:
-        lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : lake["lake"]["value"] })
+        lake_dict[lake["lakeLabel"]["value"]].update({ "wikidata_link" : lake["lake"]["value"] })
     except KeyError:
-        lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : None })
+        lake_dict[lake["lakeLabel"]["value"]].update({ "wikidata_link" : None })
     try:
         c = list(map(float, lake["coordinate_location"]["value"].strip('Point()').split()))
         coord = [{"lat" : c[0], "long" : c[1]}, c]
@@ -83,7 +94,4 @@ for lake in results["results"]["bindings"]:
     except KeyError:
         lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : None })
 
-
-
-for lake in lake_dict:
-    print(lake_dict[lake])
+# pprint.pprint(lake_dict)

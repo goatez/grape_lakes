@@ -27,29 +27,31 @@ sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert() # here lies my issue
 
-# for result in results["results"]["bindings"]:
-#     print(result)
+
+# lake_format = [["lake_name", "lakeLabel", "value"], \
+#                ["gnis", "GNIS_ID", "value"], \
+#                ["geoname", "GeoNames_ID", "value"], \
+#                ["wikipedia", "article", "value"], \
+#                ["mediawiki", "lake", "value"], \
+#                ["coordiantes", "coordinate_location", "value"]]
+#
+# lakeset = []
+# lake_dict = {}
+#
+# for lake in results["results"]["bindings"]:
+#     for properties in lake_format:
+#         try:
+#             print(properties[0]+":", lake[properties[1]][properties[2]])
+#             lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
+#         except KeyError:
+#             pass
+#         try:
+#             lakeset.append(lake[properties[1]][properties[2]])
+#             lake_dict[lake["lakeLabel"]["value"]].update( {lake[properties[1]] : lakeset } ) #this work
+#         except KeyError:
+#             pass  # key not present
 
 
-# count=0
-# lakeLabel=0
-# gnis=0
-# geoname=0
-# mediawiki=0
-# wikipedia=0
-# coordinates=0
-
-# lake_format = [["Lake Name:", "lakeLabel", "value"], \
-#                ["GNIS ID:", "GNIS_ID", "value"], \
-#                ["Geo Name ID:", "GeoNames_ID", "value"], \
-#                ["Wikipedia URL:", "article", "value"], \
-#                ["Mediawiki URL:", "lake", "value"], \
-#                ["Coordiantes:", "coordinate_location", "value"]]
-
-
-            # print(properties[0], lake[properties[1]][properties[2]])
-            # lake_haves.append(lake[properties[1]][properties[2]])
-            # lake_dict[lake["lakeLabel"]["value"]] = lake_haves  #this work
 
             # lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
             #                                          "gnis" : lake["GNIS_ID"]["value"], \
@@ -60,40 +62,43 @@ results = sparql.query().convert() # here lies my issue
             #                                          }  #this works
 
 
+
+
 lake_dict ={}
+
 
 for lake in results["results"]["bindings"]:
 
     try:
 #       PUT COMMENTED OUT CODE ABOVE HERE,YA BIG DUMMY
         lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : None }
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : lake["GNIS_ID"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "gnis" : None })
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : lake["GeoNames_ID"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "geoname" : None })
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : lake["article"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "wikipedia" : None })
     try:
         lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : lake["lake"]["value"] })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "mediawiki" : None })
     try:
         c = list(map(float, lake["coordinate_location"]["value"].strip('Point()').split()))
         coord = [{"lat" : c[0], "long" : c[1]}, c]
         lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : coord })
-    except KeyError:
+    except:
         lake_dict[lake["lakeLabel"]["value"]].update({ "coordinates" : None })
 
 #print(lake_dict)
 #print(len(lake_dict))
 
 for lake in lake_dict:
-    print(lake_dict[lake])
+    print(lake_dict)
