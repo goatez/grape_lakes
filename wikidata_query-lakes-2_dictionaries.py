@@ -260,8 +260,9 @@ pprint.pprint(lakes_missing_properties)
 
 
 
-# Descriptive Statistics
+###################################DESCRIPTIVE STATISTICS###################################
 
+# counters
 label=0
 wikipedia=0
 wikidata=0
@@ -280,6 +281,7 @@ depth=0
 gnis=0
 geoname=0
 
+# data fields
 lake_format = [["Lake Name:", "lakeLabel", "value", label], \
                ["Wikipedia URL:", "article", "value", wikipedia], \
                ["Wikidata URL:", "lake", "value", wikidata], \
@@ -299,7 +301,7 @@ lake_format = [["Lake Name:", "lakeLabel", "value", label], \
                ["Geo Name ID:", "GeoNames_ID", "value", geoname]]
 
 
-# Sum of occurences
+# sum of occurences
 for lake in results["results"]["bindings"]:
     for properties in lake_format:
         if properties[1] in lake:
