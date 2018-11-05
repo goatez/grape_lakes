@@ -39,224 +39,276 @@ results = sparql.query().convert()
 # for result in results["results"]["bindings"]:
 #     pprint.pprint(result)
 
-lake_haves ={}
-lakes_not_haves = {}
+lakes_with_properties ={}
+lakes_missing_properties = {}
 
 for lake in results["results"]["bindings"]:
 
     if "lakeLabel" in lake: # Lake name (label)
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({"lake_name" : lake["lakeLabel"]["value"] })
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({"lake_name" : lake["lakeLabel"]["value"] })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = {"lake_name" : lake["lakeLabel"]["value"] }
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = {"lake_name" : lake["lakeLabel"]["value"] }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({"lake_name" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({"lake_name" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = {"lake_name" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = {"lake_name" : None }
 
     if "artile" in lake: #wikipedia URL
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikipedia_link" : lake["article"]["value"] })
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikipedia_link" : lake["article"]["value"] })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikipedia_link" : lake["article"]["value"] }
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikipedia_link" : lake["article"]["value"] }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikipedia_link" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikipedia_link" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikipedia_link" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikipedia_link" : None }
 
     if "lake" in lake: # wikidata URL
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikidata_link" : lake["lake"]["value"] })
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikidata_link" : lake["lake"]["value"] })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikidata_link" : lake["lake"]["value"] }
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikidata_link" : lake["lake"]["value"] }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikidata_link" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "wikidata_link" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikidata_link" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "wikidata_link" : None }
 
     if "coordinate_location" in lake: # coordinates
         c = list(map(float, lake["coordinate_location"]["value"].strip('Point()').split()))  # striping string to be cast to a float
         coord = [{"lat" : c[0], "long" : c[1]}, c]  # creating dictionary of lat/long key pairing, and a list
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "coordinates" : coord })
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "coordinates" : coord })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "coordinates" : coord }
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "coordinates" : coord }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "coordinates" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "coordinates" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "coordinates" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "coordinates" : None }
 
     if "lake_inflows" in lake: # lake inflows
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "lake_inflow" : lake["lake_inflows"]["value"].strip('http://www.wikidata.org/entity/') })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
             { "lake_inflow" : lake["lake_inflows"]["value"].strip('http://www.wikidata.org/entity/') }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "lake_inflow" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "lake_inflow" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "lake_inflow" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "lake_inflow" : None }
 
     if "lake_outflow" in lake: # lake outflows
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "lake_outflow" : lake["lake_outflow"]["value"].strip('http://www.wikidata.org/entity/') })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { "lake_outflow" : lake["lake_outflow"]["value"].strip('http://www.wikidata.org/entity/') }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "lake_outflow" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "lake_outflow" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "lake_outflow" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "lake_outflow" : None }
 
     if "elevation_above_sea_level" in lake: # elevation above sea level
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "elevation" : int(lake["elevation_above_sea_level"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "elevation" : int(lake["elevation_above_sea_level"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "elevation" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "elevation" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "elevation" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "elevation" : None }
 
     if "area" in lake: # area
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "area" : float(lake["area"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "area" : float(lake["area"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "area" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "area" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "area" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "area" : None }
 
     if "length" in lake: # length
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "length" : float(lake["length"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "length" : float(lake["length"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "length" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "length" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "length" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "length" : None }
 
     if "width" in lake: # width
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "width" : float(lake["width"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "width" : float(lake["width"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "width" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "width" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "width" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "width" : None }
 
     if "volume_as_quantity" in lake: # volume as quantity
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "volume" : int(lake["volume_as_quantity"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "volume" : int(lake["volume_as_quantity"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "volume" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "volume" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "volume" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "volume" : None }
 
     if "watershed_area" in lake: # watershed area
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "watershed" : int(lake["watershed_area"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "watershed" : int(lake["watershed_area"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "watershed" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "watershed" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "watershed" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "watershed" : None }
 
     if "perimeter" in lake: # perimeter
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "perimeter" : int(lake["perimeter"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "perimeter" : int(lake["perimeter"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "perimeter" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "perimeter" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "perimeter" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "perimeter" : None }
 
     if "residence_time_of_water" in lake: # residence time of water
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "residence_time_of_water" : float(lake["residence_time_of_water"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "residence_time_of_water" : float(lake["residence_time_of_water"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "residence_time_of_water" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "residence_time_of_water" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "residence_time_of_water" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "residence_time_of_water" : None }
 
     if "vertical_depth" in lake: # vertical depth
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
             .update({ "vertical_depth" : float(lake["vertical_depth"]["value"]) })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
              { { "vertical_depth" : float(lake["vertical_depth"]["value"]) } }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "vertical_depth" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "vertical_depth" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "vertical_depth" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "vertical_depth" : None }
 
     if "GNIS_ID" in lake: # GNIS ID
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "gnis_id" : lake["GNIS_ID"]["value"] })
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "gnis_id" : lake["GNIS_ID"]["value"] })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "gnis_id" : lake["GNIS_ID"]["value"] }
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "gnis_id" : lake["GNIS_ID"]["value"] }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "gnis_id" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "gnis_id" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "gnis_id" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "gnis_id" : None }
 
     if "GeoNames_ID" in lake: # GeoName ID
         try:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "geoname_id" : lake["GeoNames_ID"]["value"] })
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "geoname_id" : lake["GeoNames_ID"]["value"] })
         except:
-            lake_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "geoname_id" : lake["GeoNames_ID"]["value"] }
+            lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "geoname_id" : lake["GeoNames_ID"]["value"] }
     else:
         try:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "geoname_id" : None })
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "geoname_id" : None })
         except:
-            lakes_not_haves[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "geoname_id" : None }
+            lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] = { "geoname_id" : None }
 
-pprint.pprint(lake_haves)
-pprint.pprint(lakes_not_haves)
+pprint.pprint(lakes_with_properties)
+pprint.pprint(lakes_missing_properties)
+
+
+
+# Descriptive Statistics
+
+label=0
+wikipedia=0
+wikidata=0
+coordinates=0
+inflow=0
+outflow=0
+elevation=0
+area=0
+length=0
+width=0
+volume=0
+watershed=0
+perimeter=0
+residence=0
+depth=0
+gnis=0
+geoname=0
+
+lake_format = [["Lake Name:", "lakeLabel", "value", label], \
+               ["Wikipedia URL:", "article", "value", wikipedia], \
+               ["Wikidata URL:", "lake", "value", wikidata], \
+               ["Coordiantes Location:", "coordinate_location", "value", coordinates], \
+               ["Lake Inflow:", "lake_inflows", "value", inflow], \
+               ["Lake Outflow:", "lake_outflow", "value", outflow], \
+               ["Elevation Above Sea Level:", "elevation_above_sea_level", "value", elevation], \
+               ["Area:", "area", "value", area], \
+               ["Length:", "length", "value", length], \
+               ["Width:", "width", "value", width], \
+               ["Volume as Quantity:", "volume_as_quantity", "value", volume], \
+               ["Watershed Area:", "watershed_area", "value", watershed], \
+               ["Perimeter:", "perimeter", "value", perimeter], \
+               ["Residence Time of Water:", "residence_time_of_water", "value", residence], \
+               ["Vertical Depth:", "vertical_depth", "value", depth], \
+               ["GNIS ID:", "GNIS_ID", "value", gnis], \
+               ["Geo Name ID:", "GeoNames_ID", "value", geoname]]
+
+
+# Sum of occurences
+for lake in results["results"]["bindings"]:
+    for properties in lake_format:
+        if properties[1] in lake:
+            properties[3]+=1
+
+for properties in lake_format:
+    print( properties[0], properties[3] )
+
+
 
 
 ###################################TESTING###################################
@@ -264,12 +316,22 @@ pprint.pprint(lakes_not_haves)
 # pprint.pprint(results)
 
 # lake_format = [["Lake Name:", "lakeLabel", "value"], \
-#                ["GNIS ID:", "GNIS_ID", "value"], \
-#                ["Geo Name ID:", "GeoNames_ID", "value"], \
 #                ["Wikipedia URL:", "article", "value"], \
-#                ["Mediawiki URL:", "lake", "value"], \
-#                ["Coordiantes:", "coordinate_location", "value"]]
-
+#                ["Wikidata URL:", "lake", "value"], \
+#                ["Coordiantes:", "coordinate_location", "value"], \
+#                ["Lake Inflow:", "lake_inflows", "value"], \
+#                ["Lake Outflow:", "lake_outflow", "value"], \
+#                ["Elevation Above Sea Level:", "elevation_above_sea_level", "value"], \
+#                ["Area:", "area", "value"], \
+#                ["Length:", "length", "value"], \
+#                ["Width:", "width", "value"], \
+#                ["Volume:", "volume_as_quantity", "value"], \
+#                ["Watershed:", "watershed_area", "value"], \
+#                ["Perimeter:", "perimeter", "value"], \
+#                ["Residence Time of Water:", "residence_time_of_water", "value"], \
+#                ["Vertical Depth:", "vertical_depth", "value"], \
+#                ["GNIS ID:", "GNIS_ID", "value"], \
+#                ["Geo Name ID:", "GeoNames_ID", "value"] ]
 
 # lake_dict = {}
 # for lake in results["results"]["bindings"]:
