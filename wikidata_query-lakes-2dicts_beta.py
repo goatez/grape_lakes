@@ -119,10 +119,10 @@ for lake in results["results"]["bindings"]:
     if "elevation_above_sea_level" in lake: # elevation above sea level
         try:
             lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
-            .update({ "elevation" : int(lake["elevation_above_sea_level"]["value"]) })
+            .update({ "elevation" : float(lake["elevation_above_sea_level"]["value"]) })
         except:
             lakes_with_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
-             { { "elevation" : int(lake["elevation_above_sea_level"]["value"]) } }
+             { { "elevation" : float(lake["elevation_above_sea_level"]["value"]) } }
     else:
         try:
             lakes_missing_properties[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "elevation" : None })

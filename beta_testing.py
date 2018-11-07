@@ -42,7 +42,7 @@ results = sparql.query().convert() # here lies my issue
 #     for properties in lake_format:
 #         try:
 #             print(properties[0]+":", lake[properties[1]][properties[2]])
-#             lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
+            lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
 #         except KeyError:
 #             pass
 #         try:
