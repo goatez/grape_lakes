@@ -35,8 +35,9 @@ LIMIT 20""")
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert()
+# pprint.pprint(results)
 
-# for result in results["results"]["bindings"]:
+# for result in results["results"]["bindings"]:  # print results line by line
 #     pprint.pprint(result)
 
 # counters
@@ -134,7 +135,6 @@ for entry in results["results"]["bindings"]:
 pprint.pprint(dict_with)
 pprint.pprint(dict_without)
 
-
 ###################################DESCRIPTIVE STATISTICS###################################
 
 # sum of occurences
@@ -148,55 +148,4 @@ for lake in results["results"]["bindings"]:
 for properties in lake_format:
     print( properties[0]+":", properties[3] )
 
-
-
 ##########################################TESTING##########################################
-
-# pprint.pprint(results)
-
-# lake_format = [["Lake Name:", "lakeLabel", "value"], \
-#                ["Wikipedia URL:", "article", "value"], \
-#                ["Wikidata URL:", "lake", "value"], \
-#                ["Coordiantes:", "coordinate_location", "value"], \
-#                ["Lake Inflow:", "lake_inflows", "value"], \
-#                ["Lake Outflow:", "lake_outflow", "value"], \
-#                ["Elevation Above Sea Level:", "elevation_above_sea_level", "value"], \
-#                ["Area:", "area", "value"], \
-#                ["Length:", "length", "value"], \
-#                ["Width:", "width", "value"], \
-#                ["Volume:", "volume_as_quantity", "value"], \
-#                ["Watershed:", "watershed_area", "value"], \
-#                ["Perimeter:", "perimeter", "value"], \
-#                ["Residence Time of Water:", "residence_time_of_water", "value"], \
-#                ["Vertical Depth:", "vertical_depth", "value"], \
-#                ["GNIS ID:", "GNIS_ID", "value"], \
-#                ["Geo Name ID:", "GeoNames_ID", "value"] ]
-
-# lake_dict = {}
-# for lake in results["results"]["bindings"]:
-#     for properties in lake_format:
-#         try:
-#             print(properties[0]+":", lake[properties[1]][properties[2]])
-#             lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"]}
-#         except KeyError:
-#             pass # key not present
-
-
-# lakeset = []
-# lake_dict = {}
-# for lake in results["results"]["bindings"]:
-#     for properties in lake_format:
-#         try:
-#             lakeset.append(lake[properties[1]][properties[2]])
-#             lake_dict[lake["lakeLabel"]["value"]].update( {lake[properties[1]] : lakeset } ) #this work
-#         except KeyError:
-#             pass  # key not present
-
-
-# lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
-#                                          "gnis" : lake["GNIS_ID"]["value"], \
-#                                          "geoname" : lake["GeoNames_ID"]["value"], \
-#                                          "wikipedia" : lake["article"]["value"], \
-#                                          "mediawiki" : lake["lake"]["value"], \
-#                                          "coordinates" : lake["coordinate_location"]["value"]
-#                                          }  #this works)
