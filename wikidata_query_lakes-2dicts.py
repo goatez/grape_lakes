@@ -41,8 +41,8 @@ results = sparql.query().convert()
 
 # counters
 label=0
-wikipedia=0
-wikidata=0
+wikipedia_title=0
+wikidata_item_id=0
 coordinates=0
 inflow=0
 outflow=0
@@ -60,8 +60,8 @@ geoname=0
 
 # data fields
 lake_format = [["lake_name", "lakeLabel", "value", label], \
-               ["wikipedia_url", "article", "value", wikipedia], \
-               ["wikidata_url", "lake", "value", wikidata], \
+               ["wikipedia_title", "article", "value", wikipedia_title], \
+               ["wikidata_item_id", "lake", "value", wikidata_item_id], \
                ["coordiantes", "coordinate_location", "value", coordinates], \
                ["lake_inflow", "lake_inflows", "value", inflow], \
                ["lake_outflow", "lake_outflow", "value", outflow], \
@@ -95,16 +95,22 @@ for entry in results["results"]["bindings"]:
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : float(entry[properties[1]][properties[2]]) }
-
             # dealing with entries that strip text
-            elif properties[1] == 'lake_inflows' or properties[1] == 'lake_outflow':
+            elif properties[1] == 'lake_inflows' or properties[1] == 'lake_outflow' or properties[1] == 'article':
+                # wikidata text
                 try:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] :  entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') } )
+                    # wikipedia text
+                    try:
+                        dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+                        .update({ properties[0] :  entry[properties[1]][properties[2]].strip('https://en.wikipedia.org/wiki/') } )
+                    except KeyError:
+                        dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+                        { properties[0] : entry[properties[1]][properties[2]].strip('https://en.wikipedia.org/wiki/') }
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') }
-
             # dealing with coordinates entry - spliting, casting as a float, and making a list
             elif properties[1] == 'coordinate_location':
                 c = list(map(float, entry[properties[1]][properties[2]].strip('Point()').split()))  # striping string to be cast to a float
@@ -115,8 +121,7 @@ for entry in results["results"]["bindings"]:
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : coord }
-
-            # dealing with remaining entries with lake properties
+            # dealing with remaining entries containing lake properties
             else:
                 try:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
@@ -124,8 +129,7 @@ for entry in results["results"]["bindings"]:
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : entry[properties[1]][properties[2]] }
-
-        # dealing with entries missing lake properties, saving to dictionary
+        # dealing with missing lake properties, saving to second dictionary as None
         else:
             try:
                 dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
@@ -135,11 +139,12 @@ for entry in results["results"]["bindings"]:
                 dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                 { properties[0] : None }
 
+# create one dictionary containing both dictionaries made above
 lake_dict = {}
 lake_dict['existing_properties'] = dict_with
 lake_dict['missing_properties'] = dict_without
 
-print.pprint(lake_dict)
+pprint.pprint(lake_dict)
 
 ###################################DESCRIPTIVE STATISTICS###################################
 
