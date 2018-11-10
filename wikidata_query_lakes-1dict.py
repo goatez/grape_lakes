@@ -134,28 +134,3 @@ for lake in results["results"]["bindings"]:
         lake_dict[lake["lake"]["value"].strip('http://www.wikidata.org/entity/')].update({ "geoname_id" : None })
 
 pprint.pprint(lake_dict)
-
-
-###################################TESTING###################################
-
-# lake_format = [["Lake Name:", "lakeLabel", "value"], \
-#                ["GNIS ID:", "GNIS_ID", "value"], \
-#                ["Geo Name ID:", "GeoNames_ID", "value"], \
-#                ["Wikipedia URL:", "article", "value"], \
-#                ["Mediawiki URL:", "lake", "value"], \
-#                ["Coordiantes:", "coordinate_location", "value"]]
-
-# for lake in results["results"]["bindings"]:
-#     for properties in lake_format:
-#         try:
-#             print(properties[0]+":", lake[properties[1]][properties[2]])
-#         except KeyError:
-#             pass # key not present
-
-# lake_dict[lake["lakeLabel"]["value"]] = {"lake_name" : lake["lakeLabel"]["value"], \
-#                                          "gnis" : lake["GNIS_ID"]["value"], \
-#                                          "geoname" : lake["GeoNames_ID"]["value"], \
-#                                          "wikipedia" : lake["article"]["value"], \
-#                                          "mediawiki" : lake["lake"]["value"], \
-#                                          "coordinates" : lake["coordinate_location"]["value"]
-#                                          }  #this works)

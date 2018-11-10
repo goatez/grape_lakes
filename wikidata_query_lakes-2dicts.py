@@ -6,12 +6,11 @@ import pprint
 sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
 sparql.setQuery("""#List of all the lakes in US
 PREFIX schema: <http://schema.org/>
-SELECT ?lake ?lakeLabel ?article ?coordinate_location ?lake_inflows ?lake_outflow
-       ?elevation_above_sea_level ?area ?length ?width ?volume_as_quantity ?watershed_area
-       ?perimeter ?residence_time_of_water ?vertical_depth ?GNIS_ID ?GeoNames_ID
-WHERE {
-  ?lake (wdt:P31/wdt:P279*) wd:Q23397.
-  ?lake wdt:P17 wd:Q30.
+SELECT  ?lake ?lakeLabel ?article ?coordinate_location ?lake_inflows ?lake_outflow
+        ?elevation_above_sea_level ?area ?length ?width ?volume_as_quantity ?watershed_area
+        ?perimeter ?residence_time_of_water ?vertical_depth ?GNIS_ID ?GeoNames_ID
+WHERE { ?lake (wdt:P31/wdt:P279*) wd:Q23397.
+        ?lake wdt:P17 wd:Q30.
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
   OPTIONAL { ?article schema:about ?lake.
              ?article schema:inLanguage "en".
@@ -81,33 +80,33 @@ lake_format = [["lake_name", "lakeLabel", "value", label], \
 dict_with = {}
 dict_without = {}
 
-# dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] = {properties[0] : None }
-# dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] = {properties[0] : None }
-
 for entry in results["results"]["bindings"]:
     for properties in lake_format:
         if properties[1] in entry:
+            # dealing with any entries that are to be cast as float
             if properties[1] == 'elevation_above_sea_level' or properties[1] == 'area' or\
                                 properties[1] == 'length' or properties[1] == 'width' or\
                                 properties[1] == 'volume_as_quantity' or properties[1] == 'watershed_area' or\
                                 properties[1] == 'perimeter' or properties[1] == 'residence_time_of_water' or\
                                 properties[1] == 'vertical_depth':
-                try:  # dealing with entries cast as float
+                try:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] : float( entry[properties[1]][properties[2]] ) } )
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : float(entry[properties[1]][properties[2]]) }
 
+            # dealing with entries that strip text
             elif properties[1] == 'lake_inflows' or properties[1] == 'lake_outflow':
-                try:  # dealing with entries stripping text
+                try:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] :  entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') } )
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') }
 
-            elif properties[1] == 'coordinate_location':  # dealing with casting coordinates and making a list
+            # dealing with coordinates entry - spliting, casting as a float, and making a list
+            elif properties[1] == 'coordinate_location':
                 c = list(map(float, entry[properties[1]][properties[2]].strip('Point()').split()))  # striping string to be cast to a float
                 coord = [{"lat" : c[0], "long" : c[1]}, c]  # creating dictionary of lat/long key pairing, and a list
                 try:
@@ -116,15 +115,19 @@ for entry in results["results"]["bindings"]:
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : coord }
+
+            # dealing with remaining entries with lake properties
             else:
-                try:  # dealing with remaining entries
+                try:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] : entry[properties[1]][properties[2]] })
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : entry[properties[1]][properties[2]] }
+
+        # dealing with entries missing lake properties, saving to dictionary
         else:
-            try:  # dealing with dictionary of missing lake properties
+            try:
                 dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
                 .update({ properties[0] : None })
             except KeyError:
@@ -132,13 +135,17 @@ for entry in results["results"]["bindings"]:
                 dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                 { properties[0] : None }
 
-pprint.pprint(dict_with)
-pprint.pprint(dict_without)
+lake_dict = {}
+lake_dict['existing_properties'] = dict_with
+lake_dict['missing_properties'] = dict_without
+
+print.pprint(lake_dict)
 
 ###################################DESCRIPTIVE STATISTICS###################################
 
 # sum of occurences
-print("Descriptive Statistics: Sum of Occurences\
+print("-----------------------------------------\
+      \nDescriptive Statistics: Sum of Occurences\
       \n-----------------------------------------")
 for lake in results["results"]["bindings"]:
     for properties in lake_format:
