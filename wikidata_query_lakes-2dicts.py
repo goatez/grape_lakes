@@ -30,7 +30,7 @@ WHERE { ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   OPTIONAL { ?lake wdt:P590 ?GNIS_ID. }
   OPTIONAL { ?lake wdt:P1566 ?GeoNames_ID. }
 }
-LIMIT 20""")
+LIMIT 40""")
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert()
@@ -41,7 +41,7 @@ results = sparql.query().convert()
 
 # counters
 label=0
-wikipedia_title=0
+wikipedia_url=0
 wikidata_item_id=0
 coordinates=0
 inflow=0
@@ -60,7 +60,7 @@ geoname=0
 
 # data fields
 lake_format = [["lake_name", "lakeLabel", "value", label], \
-               ["wikipedia_title", "article", "value", wikipedia_title], \
+               ["wikipedia_url", "article", "value", wikipedia_url], \
                ["wikidata_item_id", "lake", "value", wikidata_item_id], \
                ["coordiantes", "coordinate_location", "value", coordinates], \
                ["lake_inflow", "lake_inflows", "value", inflow], \
@@ -96,18 +96,11 @@ for entry in results["results"]["bindings"]:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : float(entry[properties[1]][properties[2]]) }
             # dealing with entries that strip text
-            elif properties[1] == 'lake_inflows' or properties[1] == 'lake_outflow' or properties[1] == 'article':
+            elif properties[1] == 'lake_inflows' or properties[1] == 'lake_outflow':
                 # wikidata text
                 try:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] :  entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') } )
-                    # wikipedia text
-                    try:
-                        dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
-                        .update({ properties[0] :  entry[properties[1]][properties[2]].strip('https://en.wikipedia.org/wiki/') } )
-                    except KeyError:
-                        dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
-                        { properties[0] : entry[properties[1]][properties[2]].strip('https://en.wikipedia.org/wiki/') }
                 except KeyError:
                     dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') }
