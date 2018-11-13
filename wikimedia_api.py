@@ -1,21 +1,50 @@
 import urllib.request, urllib.parse, urllib.error
 import json
 import pprint
+from bs4 import BeautifulSoup
+import requests
+import os
 
-url = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=Lake_Michigan&rvsection=0"
-url2 = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=Lake_Michigan&format=json"
-# url3 is working to get first section of page  (infobox and summary) | nothing from 'history' and below
-url3 = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&prop=pageprops&ppprop=wikibase_item&titles=Lake_Michigan&format=json"
-url4 = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=1&titles=Lake_Michigan&format=json"
-url5 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageprops&ppprop=wikibase_item&titles=Lake_Michigan&format=json"
+# os.getcwd()
 
-urlx = "https://en.wikipedia.org/w/api.php?action=parse&page=Lake_Michigan&format=json"
+# action = query
+urlQ1 = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&rvprop=content&rvsection=0&lang=en&titles=Lake_Michigan"
+# urlQ2 = "https://en.wikipedia.org/w/api.php?format=json& action=query& prop=revisions& rvprop=content& rvsection=1& titles=Lake_Michigan"
+# urlQ3 = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=pageprops&ppprop=wikibase_item&titles=Lake_Michigan"
 
-# api.php?action=parse&text={{Project:Sandbox}}&contentmodel=wikitext
+# action = parse
+urlP1 = "https://en.wikipedia.org/w/api.php?format=json&action=parse&section=0&list=langbacklinks&lbllang=en&page=Lake_Michigan"
+urlP2 =  'api.php?action=parse&text={{Lake_Michigan}}&contentmodel=wikitext'
+urlP3 = "https://en.wikipedia.org/w/api.php?format=json&action=parse&page=Infobox&page=Lake_Michigan"
 
-
-address = urllib.request.urlopen(urlx)
+address = urllib.request.urlopen(urlQ1)
 data = address.read().decode()
-wiki_lake = json.loads(data)
+wikiLake = json.loads(data)
 
-pprint.pprint(json.dumps(wiki_lake, indent=4))
+pprint.pprint(json.dumps(wikiLake, indent=4))
+# pprint.pprint(wikiLake['parse']['text'])
+
+
+url1 = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&rvprop=content&rvsection=0&lang=en&titles=Lake_Michigan'
+url2 = 'https://en.wikipedia.org/wiki/Lake_Michigan'
+
+r = requests.get(url1)
+soup = BeautifulSoup(r.text, 'lxml')
+print(soup.prettify())
+
+
+r = requests.get(url2)
+soup = BeautifulSoup(r.text, 'xml')
+print(soup.prettify())
+
+
+
+# write to text
+# with open('api.txt', 'w') as file:
+#     file.write(json.dumps(wikiLake, indent=2))
+
+
+
+# import wptools
+# page = wptools.page('Lake_Ontario')
+# page.get_parse()
