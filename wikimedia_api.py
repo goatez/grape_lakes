@@ -24,9 +24,12 @@ wikiLake = json.loads(data)
 pprint.pprint(json.dumps(wikiLake, indent=4))
 # pprint.pprint(wikiLake['parse']['text'])
 
+# prop=parsetree
 
 url1 = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&rvprop=content&rvsection=0&lang=en&titles=Lake_Michigan'
 url2 = 'https://en.wikipedia.org/wiki/Lake_Michigan'
+
+
 
 r = requests.get(url1)
 soup = BeautifulSoup(r.text, 'lxml')
@@ -48,3 +51,9 @@ print(soup.prettify())
 # import wptools
 # page = wptools.page('Lake_Ontario')
 # page.get_parse()
+
+
+
+parts = soup.find_all('value')
+for part in parts:
+    print(part.gettext())
