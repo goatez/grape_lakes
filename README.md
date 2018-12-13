@@ -17,53 +17,53 @@ For this project, I am comparing the Wikipedia and Wikidata entries of all the l
 Project Overview
 In order to compare the Wikipedia and Wikidata U.S. Lake articles, I needed to create a dictionaries containing both entries, so that they can then be compared against each other, with any differing or missing lake properties saved in another dictionary.
 
-Lake Properties: as defined on the Wikidata page for the WikiProject Lakes
+Lake Properties: as defined on the Wikidata page for the WikiProject Lakes<br />
 
  
-•	country
-•	coordinate location
-•	lake inflows
-•	lake outflow
-•	elevation above sea level
-•	area
-•	length
-•	width
-•	volume as quantity
-•	watershed area
-•	perimeter
-•	residence time of water
-•	vertical depth
+•	country<br />
+•	coordinate location<br />
+•	lake inflows<br />
+•	lake outflow<br />
+•	elevation above sea level<br />
+•	area<br />
+•	length<br />
+•	width<br />
+•	volume as quantity<br />
+•	watershed area<br />
+•	perimeter<br />
+•	residence time of water<br />
+•	vertical depth<br />
  
 
-Additionally, the following fields are also included in my search: 
+Additionally, the following fields are also included in my search:<br /> 
 
  
-•	GNIS ID #
-•	Geo-name ID #
+•	GNIS ID #<br />
+•	Geo-name ID #<br />
  
 
-Properties being compared
-For the sake of time and project complexity, I have scaled down the scope of the project that was initially proposed; and I will be comparing the following properties.
+Properties being compared<br />
+For the sake of time and project complexity, I have scaled down the scope of the project that was initially proposed; and I will be comparing the following properties.<br />
 
  
-•	elevation above sea level (elevation)
-•	area (area)
-•	length (length)
-•	width (width)
-•	volume as quantity (volume)
-•	vertical depth (depth)
-•	GNIS ID # (reference) 
+•	elevation above sea level (elevation)<br />
+•	area (area)<br />
+•	length (length)<br />
+•	width (width)<br />
+•	volume as quantity (volume)<br />
+•	vertical depth (depth)<br />
+•	GNIS ID # (reference)<br />
 
-Properties not being compared
-These are the lake properties that I will not be comparing, again, for sake of time and project complexity.
+Properties not being compared<br />
+These are the lake properties that I will not be comparing, again, for sake of time and project complexity.<br />
 
  
-•	coordinate location
-•	lake inflows
-•	lake outflow
-•	watershed area
-•	perimeter
-•	residence time of water
+•	coordinate location<br />
+•	lake inflows<br />
+•	lake outflow<br />
+•	watershed area<br />
+•	perimeter<br />
+•	residence time of water<br />
  
 SPARQL Query
 In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties.. I used Wikidata Query Helper to create the SPARQL query: 
