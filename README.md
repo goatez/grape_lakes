@@ -17,7 +17,7 @@ For this project, I am comparing the Wikipedia and Wikidata entries of all the l
 Project Overview<br />
 In order to compare the Wikipedia and Wikidata U.S. Lake articles, I needed to create a dictionaries containing both entries, so that they can then be compared against each other, with any differing or missing lake properties saved in another dictionary.
 
-Lake Properties: 
+Lake Properties:<br /> 
 (as defined on the Wikidata page for the WikiProject Lakes)<br />
 
 •	country<br />
@@ -39,7 +39,7 @@ Additionally, the following fields were also included in my search:<br />
 •	GNIS ID #<br />
 •	Geo-name ID #<br />
 
-Properties being compared: 
+Properties being compared:<br /> 
 (For the sake of time and project complexity, I have scaled down the scope of the project that was initially proposed; and I will be comparing the following properties)<br />
 
 •	elevation above sea level (elevation)<br />
@@ -50,7 +50,7 @@ Properties being compared:
 •	vertical depth (depth)<br />
 •	GNIS ID # (reference)<br />
 
-Properties not being compared: 
+Properties not being compared:<br /> 
 (These are the lake properties that I will not be comparing, for sake of time and project complexity)<br />
 
 •	coordinate location<br />
