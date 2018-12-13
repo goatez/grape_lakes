@@ -6,6 +6,7 @@ import json
 import pprint
 import wptools
 import re
+import os
 
 # wikidata query for all the lakes in the US
 sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
@@ -35,7 +36,7 @@ WHERE { ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   OPTIONAL { ?lake wdt:P590 ?GNIS_ID. }
   OPTIONAL { ?lake wdt:P1566 ?GeoNames_ID. }
 }
-LIMIT 150""")  # change or delete the limit here to alter the number of lakes to be included in your query
+LIMIT 1500""")  # change or delete the limit here to alter the number of lakes to be included in your query
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert()
@@ -61,13 +62,13 @@ gnis=0
 geoname=0
 
 #wikipedia counters
-elevation=0
-area=0
-length=0
-width=0
-volume=0
-depth=0
-gnis=0
+elevation2=0
+area2=0
+length2=0
+width2=0
+volume2=0
+depth2=0
+gnis2=0
 
 # data fields
 lake_format = [["lake_name", "lakeLabel", "value", label], \
@@ -88,13 +89,13 @@ lake_format = [["lake_name", "lakeLabel", "value", label], \
                ["gnis_id", "GNIS_ID", "value", gnis], \
                ["geo_name_id", "GeoNames_ID", "value", geoname]]
 
-wikipedia_lake_format = [["elevation", "elevation", elevation], \
-                        ["area", "area", area], \
-                        ["length", "length", length], \
-                        ["width", "width", width], \
-                        ["volume", "volume", volume], \
-                        ["depth", "depth", depth], \
-                        ["gnis_id", "reference", gnis]]
+wikipedia_lake_format = [["elevation", "elevation", elevation2], \
+                        ["area", "area", area2], \
+                        ["length", "length", length2], \
+                        ["width", "width", width2], \
+                        ["volume", "volume", volume2], \
+                        ["depth", "depth", depth2], \
+                        ["gnis_id", "reference", gnis2]]
 
 dict_with = {}
 dict_without = {}
@@ -291,6 +292,8 @@ lake_dict['wikipedia_entries'] = clean_wikipedia
 # writing comparison list of properties that do not match to text file
 # saving list in new dictionary
 
+# TODO only completed a comparison on 7 of the 14 lake properties, still must
+
 lake_formating = ["area", "depth", "elevation", "gnis_id", "length", "volume", "width"]
 lake_properties_not_matching = {}
 wikidata = {}
@@ -323,32 +326,8 @@ lake_properties_not_matching["Wikipedia"] = wikipedia
 pprint.pprint(lake_properties_not_matching)
 
 ###################################DESCRIPTIVE STATISTICS###################################
-label=0
-wikipedia_url=0
-wikidata_item_id=0
-coordinates=0
-inflow=0
-outflow=0
-elevation=0
-area=0
-length=0
-width=0
-volume=0
-watershed=0
-perimeter=0
-residence=0
-depth=0
-gnis=0
-geoname=0
+# IF YOU RUN JUST THIS SECTION OF CODE, BE SURE TO SET THE COUNTERS TO ZERO IN CODE ABOVE
 
-#wikipedia counters
-elevation=0
-area=0
-length=0
-width=0
-volume=0
-depth=0
-gnis=0
 x = str(len(lake_dict['wikidata_entries']))
 y = str(len(lake_dict['wikipedia_entries']))
 
@@ -372,6 +351,7 @@ for properties in lake_format:
     f.write( "\n"+str(properties[0])+": "+ str(properties[3]) )
 
 # descriptive statistics for Wikipedia articles dictionary
+
 f.write("\n\n-----------------------------------------")
 for lake in lake_dict['wikipedia_entries']:
     for properties in wikipedia_lake_format:
@@ -381,9 +361,6 @@ for lake in lake_dict['wikipedia_entries']:
 f.write("\nTotal number of Wikipedia articles: " + y +\
         "\n-----------------------------------------")
 for properties in wikipedia_lake_format:
-    f.write( "\n"+str(properties[0])+": "+ str(properties[2]) )
+    f.write( "\n"+ str(properties[0])+ ": " + str(properties[2]) )
 
 f.close()
-import os
-os.getcwd()
-os.chdir('C:\\Users\\billy\\Documents\\GitHub\\grape_lakes')

@@ -1,0 +1,1003 @@
+Lake Properties Not Matching: Wikidata vs. Wikipedia
+
+----------------Lake_Chaubunagungamaug---------------------
+No match | Lake_Chaubunagungamaug | Wikidata  | depth : 14.0
+No match | Lake_Chaubunagungamaug | Wikipedia | depth : None
+No match | Lake_Chaubunagungamaug | Wikidata  | elevation : 145.0
+No match | Lake_Chaubunagungamaug | Wikipedia | elevation : 477.0
+No match | Lake_Chaubunagungamaug | Wikidata  | gnis_id : 619290
+No match | Lake_Chaubunagungamaug | Wikipedia | gnis_id : None
+No match | Lake_Chaubunagungamaug | Wikidata  | length : 5.23
+No match | Lake_Chaubunagungamaug | Wikipedia | length : 3.25
+No match | Lake_Chaubunagungamaug | Wikidata  | width : 1.811
+No match | Lake_Chaubunagungamaug | Wikipedia | width : 1.125
+
+----------------Lake_Ontario---------------------
+No match | Lake_Ontario | Wikidata  | area : 18529.0
+No match | Lake_Ontario | Wikipedia | area : 7340.0
+No match | Lake_Ontario | Wikidata  | depth : 244.0
+No match | Lake_Ontario | Wikipedia | depth : 283.0
+No match | Lake_Ontario | Wikidata  | elevation : 75.0
+No match | Lake_Ontario | Wikipedia | elevation : 243.0
+No match | Lake_Ontario | Wikidata  | length : 311.0
+No match | Lake_Ontario | Wikipedia | length : 193.0
+No match | Lake_Ontario | Wikidata  | volume : 1639000.0
+No match | Lake_Ontario | Wikipedia | volume : 393.0
+No match | Lake_Ontario | Wikidata  | width : 85.0
+No match | Lake_Ontario | Wikipedia | width : 53.0
+
+----------------Lake_Michigan---------------------
+No match | Lake_Michigan | Wikidata  | area : 57750.0
+No match | Lake_Michigan | Wikipedia | area : 22404.0
+No match | Lake_Michigan | Wikidata  | depth : 281.0
+No match | Lake_Michigan | Wikipedia | depth : 279.0
+No match | Lake_Michigan | Wikidata  | elevation : 176.0
+No match | Lake_Michigan | Wikipedia | elevation : 577.0
+No match | Lake_Michigan | Wikidata  | gnis_id : 1623080
+No match | Lake_Michigan | Wikipedia | gnis_id : None
+No match | Lake_Michigan | Wikidata  | length : 494.0
+No match | Lake_Michigan | Wikipedia | length : 307.0
+No match | Lake_Michigan | Wikidata  | volume : 4918000.0
+No match | Lake_Michigan | Wikipedia | volume : 1180.0
+No match | Lake_Michigan | Wikidata  | width : 190.0
+No match | Lake_Michigan | Wikipedia | width : 118.0
+
+----------------Lake_Huron---------------------
+No match | Lake_Huron | Wikidata  | area : 59600.0
+No match | Lake_Huron | Wikipedia | area : None
+No match | Lake_Huron | Wikidata  | depth : 230.0
+No match | Lake_Huron | Wikipedia | depth : 195.0
+No match | Lake_Huron | Wikidata  | elevation : 176.0
+No match | Lake_Huron | Wikipedia | elevation : 577.0
+No match | Lake_Huron | Wikidata  | gnis_id : 1624619
+No match | Lake_Huron | Wikipedia | gnis_id : None
+No match | Lake_Huron | Wikidata  | length : None
+No match | Lake_Huron | Wikipedia | length : 206.0
+No match | Lake_Huron | Wikidata  | volume : 3538000.0
+No match | Lake_Huron | Wikipedia | volume : 850.0
+No match | Lake_Huron | Wikidata  | width : None
+No match | Lake_Huron | Wikipedia | width : 183.0
+
+----------------Lake_Erie---------------------
+No match | Lake_Erie | Wikidata  | area : 25700.0
+No match | Lake_Erie | Wikipedia | area : 9910.0
+No match | Lake_Erie | Wikidata  | depth : 64.0
+No match | Lake_Erie | Wikipedia | depth : 62.0
+No match | Lake_Erie | Wikidata  | elevation : 174.0
+No match | Lake_Erie | Wikipedia | elevation : 569.0
+No match | Lake_Erie | Wikidata  | length : None
+No match | Lake_Erie | Wikipedia | length : 241.0
+No match | Lake_Erie | Wikidata  | volume : 483000.0
+No match | Lake_Erie | Wikipedia | volume : 116.0
+No match | Lake_Erie | Wikidata  | width : None
+No match | Lake_Erie | Wikipedia | width : 57.0
+
+----------------Lake_Champlain---------------------
+No match | Lake_Champlain | Wikidata  | area : 1269.0
+No match | Lake_Champlain | Wikipedia | area : 1331.0
+No match | Lake_Champlain | Wikidata  | depth : 122.0
+No match | Lake_Champlain | Wikipedia | depth : 19.0
+No match | Lake_Champlain | Wikidata  | elevation : 30.0
+No match | Lake_Champlain | Wikipedia | elevation : 95.0
+No match | Lake_Champlain | Wikidata  | length : 201.0
+No match | Lake_Champlain | Wikipedia | length : 172.0
+No match | Lake_Champlain | Wikidata  | volume : None
+No match | Lake_Champlain | Wikipedia | volume : 25.0
+
+----------------Soap_Lake---------------------
+No match | Soap_Lake | Wikidata  | area : 5.12
+No match | Soap_Lake | Wikipedia | area : 2.0
+No match | Soap_Lake | Wikidata  | depth : 21.2
+No match | Soap_Lake | Wikipedia | depth : None
+No match | Soap_Lake | Wikidata  | elevation : 6316.0
+No match | Soap_Lake | Wikipedia | elevation : None
+No match | Soap_Lake | Wikidata  | gnis_id : 253906
+No match | Soap_Lake | Wikipedia | gnis_id : None
+
+----------------Lake_Hefner---------------------
+No match | Lake_Hefner | Wikidata  | area : None
+No match | Lake_Hefner | Wikipedia | area : 2500.0
+No match | Lake_Hefner | Wikidata  | depth : None
+No match | Lake_Hefner | Wikipedia | depth : 29.0
+No match | Lake_Hefner | Wikidata  | volume : None
+No match | Lake_Hefner | Wikipedia | volume : 75.0
+
+----------------Soda_Lake_(San_Bernardino_County)---------------------
+No match | Soda_Lake_(San_Bernardino_County) | Wikidata  | length : None
+No match | Soda_Lake_(San_Bernardino_County) | Wikipedia | length : 24.0
+No match | Soda_Lake_(San_Bernardino_County) | Wikidata  | width : None
+No match | Soda_Lake_(San_Bernardino_County) | Wikipedia | width : 10.0
+
+----------------Suttle_Lake_(Oregon)---------------------
+No match | Suttle_Lake_(Oregon) | Wikidata  | area : None
+No match | Suttle_Lake_(Oregon) | Wikipedia | area : 253.0
+No match | Suttle_Lake_(Oregon) | Wikidata  | depth : None
+No match | Suttle_Lake_(Oregon) | Wikipedia | depth : 44.0
+No match | Suttle_Lake_(Oregon) | Wikidata  | elevation : None
+No match | Suttle_Lake_(Oregon) | Wikipedia | elevation : 3438.0
+No match | Suttle_Lake_(Oregon) | Wikidata  | length : None
+No match | Suttle_Lake_(Oregon) | Wikipedia | length : 1.4
+No match | Suttle_Lake_(Oregon) | Wikidata  | width : None
+No match | Suttle_Lake_(Oregon) | Wikipedia | width : 0.4
+
+----------------Walker_Lake_(Nevada)---------------------
+No match | Walker_Lake_(Nevada) | Wikidata  | area : 272.0
+No match | Walker_Lake_(Nevada) | Wikipedia | area : 130.0
+No match | Walker_Lake_(Nevada) | Wikidata  | length : 29.0
+No match | Walker_Lake_(Nevada) | Wikipedia | length : 11.0
+No match | Walker_Lake_(Nevada) | Wikidata  | width : 11.0
+No match | Walker_Lake_(Nevada) | Wikipedia | width : 5.0
+
+----------------Flaming_Gorge_Reservoir---------------------
+No match | Flaming_Gorge_Reservoir | Wikidata  | area : None
+No match | Flaming_Gorge_Reservoir | Wikipedia | area : 42020.0
+No match | Flaming_Gorge_Reservoir | Wikidata  | volume : None
+No match | Flaming_Gorge_Reservoir | Wikipedia | volume : 3788900.0
+
+----------------Cherokee_Lake---------------------
+No match | Cherokee_Lake | Wikidata  | area : None
+No match | Cherokee_Lake | Wikipedia | area : 28780.0
+No match | Cherokee_Lake | Wikidata  | gnis_id : 1280322
+No match | Cherokee_Lake | Wikipedia | gnis_id : None
+
+----------------Petenwell_Lake---------------------
+No match | Petenwell_Lake | Wikidata  | area : None
+No match | Petenwell_Lake | Wikipedia | area : 23000.0
+No match | Petenwell_Lake | Wikidata  | gnis_id : 1571254
+No match | Petenwell_Lake | Wikipedia | gnis_id : None
+
+----------------Mormon_Lake---------------------
+No match | Mormon_Lake | Wikidata  | area : None
+No match | Mormon_Lake | Wikipedia | area : 600.0
+No match | Mormon_Lake | Wikidata  | depth : None
+No match | Mormon_Lake | Wikipedia | depth : 10.0
+No match | Mormon_Lake | Wikidata  | elevation : None
+No match | Mormon_Lake | Wikipedia | elevation : 7100.0
+No match | Mormon_Lake | Wikidata  | gnis_id : 41889
+No match | Mormon_Lake | Wikipedia | gnis_id : None
+
+----------------Kenai_Lake---------------------
+No match | Kenai_Lake | Wikidata  | area : None
+No match | Kenai_Lake | Wikipedia | area : 13813.0
+No match | Kenai_Lake | Wikidata  | depth : None
+No match | Kenai_Lake | Wikipedia | depth : 299.0
+No match | Kenai_Lake | Wikidata  | elevation : None
+No match | Kenai_Lake | Wikipedia | elevation : 433.0
+No match | Kenai_Lake | Wikidata  | gnis_id : 1423027
+No match | Kenai_Lake | Wikipedia | gnis_id : None
+No match | Kenai_Lake | Wikidata  | length : None
+No match | Kenai_Lake | Wikipedia | length : 22.0
+
+----------------Rainy_Lake---------------------
+No match | Rainy_Lake | Wikidata  | depth : 50.0
+No match | Rainy_Lake | Wikipedia | depth : None
+No match | Rainy_Lake | Wikidata  | gnis_id : 662245
+No match | Rainy_Lake | Wikipedia | gnis_id : None
+
+----------------Lake_Okeechobee---------------------
+No match | Lake_Okeechobee | Wikidata  | area : 1890.0
+No match | Lake_Okeechobee | Wikipedia | area : None
+No match | Lake_Okeechobee | Wikidata  | depth : 3.0
+No match | Lake_Okeechobee | Wikipedia | depth : None
+No match | Lake_Okeechobee | Wikidata  | gnis_id : 307550
+No match | Lake_Okeechobee | Wikipedia | gnis_id : None
+
+----------------Honeoye_Lake---------------------
+No match | Honeoye_Lake | Wikidata  | area : None
+No match | Honeoye_Lake | Wikipedia | area : 1772.0
+No match | Honeoye_Lake | Wikidata  | depth : 9.2
+No match | Honeoye_Lake | Wikipedia | depth : 16.0
+No match | Honeoye_Lake | Wikidata  | elevation : 245.0
+No match | Honeoye_Lake | Wikipedia | elevation : 804.0
+No match | Honeoye_Lake | Wikidata  | gnis_id : 970218
+No match | Honeoye_Lake | Wikipedia | gnis_id : None
+No match | Honeoye_Lake | Wikidata  | length : None
+No match | Honeoye_Lake | Wikipedia | length : 4.5
+No match | Honeoye_Lake | Wikidata  | volume : None
+No match | Honeoye_Lake | Wikipedia | volume : 9500000000.0
+No match | Honeoye_Lake | Wikidata  | width : None
+No match | Honeoye_Lake | Wikipedia | width : 0.8
+
+----------------Lake_Winnipesaukee---------------------
+No match | Lake_Winnipesaukee | Wikidata  | area : 185.0
+No match | Lake_Winnipesaukee | Wikipedia | area : 71.0
+No match | Lake_Winnipesaukee | Wikidata  | depth : 180.0
+No match | Lake_Winnipesaukee | Wikipedia | depth : None
+No match | Lake_Winnipesaukee | Wikidata  | elevation : 153.0
+No match | Lake_Winnipesaukee | Wikipedia | elevation : 504.0
+No match | Lake_Winnipesaukee | Wikidata  | length : None
+No match | Lake_Winnipesaukee | Wikipedia | length : 20.0
+No match | Lake_Winnipesaukee | Wikidata  | width : None
+No match | Lake_Winnipesaukee | Wikipedia | width : 9.0
+
+----------------Lake_Tapps_(Washington)---------------------
+No match | Lake_Tapps_(Washington) | Wikidata  | area : None
+No match | Lake_Tapps_(Washington) | Wikipedia | area : 4.5
+
+----------------White_Rock_Lake---------------------
+No match | White_Rock_Lake | Wikidata  | area : None
+No match | White_Rock_Lake | Wikipedia | area : 1254.0
+No match | White_Rock_Lake | Wikidata  | elevation : None
+No match | White_Rock_Lake | Wikipedia | elevation : 458.0
+No match | White_Rock_Lake | Wikidata  | volume : None
+No match | White_Rock_Lake | Wikipedia | volume : 18160.0
+
+----------------Chickamauga_Lake---------------------
+No match | Chickamauga_Lake | Wikidata  | area : None
+No match | Chickamauga_Lake | Wikipedia | area : 36240.0
+No match | Chickamauga_Lake | Wikidata  | gnis_id : 1326920
+No match | Chickamauga_Lake | Wikipedia | gnis_id : None
+
+----------------Lake_Havasu---------------------
+No match | Lake_Havasu | Wikidata  | area : None
+No match | Lake_Havasu | Wikipedia | area : 19300.0
+No match | Lake_Havasu | Wikidata  | depth : None
+No match | Lake_Havasu | Wikipedia | depth : 35.0
+No match | Lake_Havasu | Wikidata  | elevation : None
+No match | Lake_Havasu | Wikipedia | elevation : 448.0
+
+----------------San_Carlos_Lake---------------------
+No match | San_Carlos_Lake | Wikidata  | area : None
+No match | San_Carlos_Lake | Wikipedia | area : 19.0
+No match | San_Carlos_Lake | Wikidata  | length : None
+No match | San_Carlos_Lake | Wikipedia | length : 23.0
+No match | San_Carlos_Lake | Wikidata  | width : None
+No match | San_Carlos_Lake | Wikipedia | width : 2.0
+
+----------------Lake_Oahe---------------------
+No match | Lake_Oahe | Wikidata  | area : None
+No match | Lake_Oahe | Wikipedia | area : 370000.0
+No match | Lake_Oahe | Wikidata  | depth : 62.0
+No match | Lake_Oahe | Wikipedia | depth : None
+No match | Lake_Oahe | Wikidata  | elevation : 502.0
+No match | Lake_Oahe | Wikipedia | elevation : 1647.0
+No match | Lake_Oahe | Wikidata  | length : 372.0
+No match | Lake_Oahe | Wikipedia | length : 231.0
+No match | Lake_Oahe | Wikidata  | volume : None
+No match | Lake_Oahe | Wikipedia | volume : 23500000.0
+
+----------------Eufaula_Lake---------------------
+No match | Eufaula_Lake | Wikidata  | area : 412.0
+No match | Eufaula_Lake | Wikipedia | area : 102000.0
+No match | Eufaula_Lake | Wikidata  | depth : 27.0
+No match | Eufaula_Lake | Wikipedia | depth : 23.0
+No match | Eufaula_Lake | Wikidata  | elevation : 178.0
+No match | Eufaula_Lake | Wikipedia | elevation : 585.0
+No match | Eufaula_Lake | Wikidata  | volume : None
+No match | Eufaula_Lake | Wikipedia | volume : 2099000.0
+
+----------------Lac_qui_Parle---------------------
+
+----------------Guajataca_Lake---------------------
+No match | Guajataca_Lake | Wikidata  | area : None
+No match | Guajataca_Lake | Wikipedia | area : 1.32
+No match | Guajataca_Lake | Wikidata  | volume : None
+No match | Guajataca_Lake | Wikipedia | volume : 11.0
+
+----------------La_Plata_Lake---------------------
+
+----------------Bonito_Lake---------------------
+No match | Bonito_Lake | Wikidata  | elevation : None
+No match | Bonito_Lake | Wikipedia | elevation : 7380.0
+No match | Bonito_Lake | Wikidata  | gnis_id : 904000
+No match | Bonito_Lake | Wikipedia | gnis_id : None
+No match | Bonito_Lake | Wikidata  | length : None
+No match | Bonito_Lake | Wikipedia | length : 2800.0
+
+----------------Lake_Lahontan_(reservoir)---------------------
+No match | Lake_Lahontan_(reservoir) | Wikidata  | area : 40.0
+No match | Lake_Lahontan_(reservoir) | Wikipedia | area : None
+No match | Lake_Lahontan_(reservoir) | Wikidata  | length : 27.0
+No match | Lake_Lahontan_(reservoir) | Wikipedia | length : None
+
+----------------Apache_Lake_(Arizona)---------------------
+No match | Apache_Lake_(Arizona) | Wikidata  | area : None
+No match | Apache_Lake_(Arizona) | Wikipedia | area : 2568.0
+No match | Apache_Lake_(Arizona) | Wikidata  | depth : None
+No match | Apache_Lake_(Arizona) | Wikipedia | depth : 240.0
+No match | Apache_Lake_(Arizona) | Wikidata  | elevation : None
+No match | Apache_Lake_(Arizona) | Wikipedia | elevation : 1900.0
+No match | Apache_Lake_(Arizona) | Wikidata  | gnis_id : 25703
+No match | Apache_Lake_(Arizona) | Wikipedia | gnis_id : None
+No match | Apache_Lake_(Arizona) | Wikidata  | volume : None
+No match | Apache_Lake_(Arizona) | Wikipedia | volume : 254138.0
+
+----------------Lake_Tuendae---------------------
+No match | Lake_Tuendae | Wikidata  | area : None
+No match | Lake_Tuendae | Wikipedia | area : 5600.0
+No match | Lake_Tuendae | Wikidata  | elevation : None
+No match | Lake_Tuendae | Wikipedia | elevation : 289.0
+No match | Lake_Tuendae | Wikidata  | length : None
+No match | Lake_Tuendae | Wikipedia | length : 140.0
+No match | Lake_Tuendae | Wikidata  | width : None
+No match | Lake_Tuendae | Wikipedia | width : 40.0
+
+----------------Lake_Mead---------------------
+No match | Lake_Mead | Wikidata  | area : 640.0
+No match | Lake_Mead | Wikipedia | area : 247.0
+No match | Lake_Mead | Wikidata  | depth : 162.0
+No match | Lake_Mead | Wikipedia | depth : None
+No match | Lake_Mead | Wikidata  | elevation : 372.0
+No match | Lake_Mead | Wikipedia | elevation : 1229.0
+No match | Lake_Mead | Wikidata  | length : 180.0
+No match | Lake_Mead | Wikipedia | length : 120.0
+No match | Lake_Mead | Wikidata  | volume : 32.22
+No match | Lake_Mead | Wikipedia | volume : 26134000.0
+
+----------------Otsego_Lake_(New_York)---------------------
+No match | Otsego_Lake_(New_York) | Wikidata  | area : 7.98
+No match | Otsego_Lake_(New_York) | Wikipedia | area : 4046.0
+No match | Otsego_Lake_(New_York) | Wikidata  | depth : 7.0
+No match | Otsego_Lake_(New_York) | Wikipedia | depth : 82.0
+No match | Otsego_Lake_(New_York) | Wikidata  | elevation : 374.0
+No match | Otsego_Lake_(New_York) | Wikipedia | elevation : 1191.0
+No match | Otsego_Lake_(New_York) | Wikidata  | gnis_id : 959551
+No match | Otsego_Lake_(New_York) | Wikipedia | gnis_id : None
+No match | Otsego_Lake_(New_York) | Wikidata  | length : 14.0
+No match | Otsego_Lake_(New_York) | Wikipedia | length : 7.8
+No match | Otsego_Lake_(New_York) | Wikidata  | volume : 2.864
+No match | Otsego_Lake_(New_York) | Wikipedia | volume : None
+No match | Otsego_Lake_(New_York) | Wikidata  | width : 2.5
+No match | Otsego_Lake_(New_York) | Wikipedia | width : None
+
+----------------White_Bear_Lake_(Minnesota)---------------------
+No match | White_Bear_Lake_(Minnesota) | Wikidata  | area : 9.87
+No match | White_Bear_Lake_(Minnesota) | Wikipedia | area : 2427.0
+No match | White_Bear_Lake_(Minnesota) | Wikidata  | depth : 25.0
+No match | White_Bear_Lake_(Minnesota) | Wikipedia | depth : None
+No match | White_Bear_Lake_(Minnesota) | Wikidata  | elevation : None
+No match | White_Bear_Lake_(Minnesota) | Wikipedia | elevation : 922.0
+
+----------------Lake_Powell---------------------
+No match | Lake_Powell | Wikidata  | area : 658.0
+No match | Lake_Powell | Wikipedia | area : 161390.0
+No match | Lake_Powell | Wikidata  | depth : 150.0
+No match | Lake_Powell | Wikipedia | depth : 132.0
+No match | Lake_Powell | Wikidata  | elevation : 1097.0
+No match | Lake_Powell | Wikipedia | elevation : 3700.0
+No match | Lake_Powell | Wikidata  | length : 300.0
+No match | Lake_Powell | Wikipedia | length : 186.0
+No match | Lake_Powell | Wikidata  | volume : 16000.0
+No match | Lake_Powell | Wikipedia | volume : 24322000.0
+No match | Lake_Powell | Wikidata  | width : 40.0
+No match | Lake_Powell | Wikipedia | width : 25.0
+
+----------------Butte_Lake_(California)---------------------
+No match | Butte_Lake_(California) | Wikidata  | gnis_id : 257771
+No match | Butte_Lake_(California) | Wikipedia | gnis_id : None
+
+----------------Yellowstone_Lake---------------------
+No match | Yellowstone_Lake | Wikidata  | area : 354.0
+No match | Yellowstone_Lake | Wikipedia | area : 136.0
+No match | Yellowstone_Lake | Wikidata  | depth : 117.0
+No match | Yellowstone_Lake | Wikipedia | depth : 139.0
+No match | Yellowstone_Lake | Wikidata  | elevation : 2357.0
+No match | Yellowstone_Lake | Wikipedia | elevation : 7732.0
+No match | Yellowstone_Lake | Wikidata  | gnis_id : 1609324
+No match | Yellowstone_Lake | Wikipedia | gnis_id : None
+No match | Yellowstone_Lake | Wikidata  | length : 32.0
+No match | Yellowstone_Lake | Wikipedia | length : 20.0
+No match | Yellowstone_Lake | Wikidata  | width : 23.0
+No match | Yellowstone_Lake | Wikipedia | width : 15.0
+
+----------------Lac_des_Allemands---------------------
+No match | Lac_des_Allemands | Wikidata  | area : 49.0
+No match | Lac_des_Allemands | Wikipedia | area : None
+No match | Lac_des_Allemands | Wikidata  | depth : 3.3
+No match | Lac_des_Allemands | Wikipedia | depth : 5.0
+No match | Lac_des_Allemands | Wikidata  | elevation : 0.0
+No match | Lac_des_Allemands | Wikipedia | elevation : None
+No match | Lac_des_Allemands | Wikidata  | gnis_id : 1627417
+No match | Lac_des_Allemands | Wikipedia | gnis_id : None
+No match | Lac_des_Allemands | Wikidata  | length : 10.46
+No match | Lac_des_Allemands | Wikipedia | length : 5.5
+No match | Lac_des_Allemands | Wikidata  | width : 8.85
+No match | Lac_des_Allemands | Wikipedia | width : 6.5
+
+----------------Ostrander_Lake---------------------
+No match | Ostrander_Lake | Wikidata  | gnis_id : 264410
+No match | Ostrander_Lake | Wikipedia | gnis_id : None
+
+----------------Tidal_Basin---------------------
+No match | Tidal_Basin | Wikidata  | area : None
+No match | Tidal_Basin | Wikipedia | area : 107.0
+No match | Tidal_Basin | Wikidata  | depth : None
+No match | Tidal_Basin | Wikipedia | depth : 10.0
+No match | Tidal_Basin | Wikidata  | elevation : None
+No match | Tidal_Basin | Wikipedia | elevation : 3.0
+No match | Tidal_Basin | Wikidata  | gnis_id : 531843
+No match | Tidal_Basin | Wikipedia | gnis_id : None
+
+----------------Iliamna_Lake---------------------
+No match | Iliamna_Lake | Wikidata  | area : 2622.0
+No match | Iliamna_Lake | Wikipedia | area : 1012.0
+No match | Iliamna_Lake | Wikidata  | depth : 301.0
+No match | Iliamna_Lake | Wikipedia | depth : 144.0
+No match | Iliamna_Lake | Wikidata  | elevation : 14.0
+No match | Iliamna_Lake | Wikipedia | elevation : 46.0
+No match | Iliamna_Lake | Wikidata  | gnis_id : 1403764
+No match | Iliamna_Lake | Wikipedia | gnis_id : None
+No match | Iliamna_Lake | Wikidata  | length : 124.0
+No match | Iliamna_Lake | Wikipedia | length : 77.0
+No match | Iliamna_Lake | Wikidata  | volume : None
+No match | Iliamna_Lake | Wikipedia | volume : 27.0
+No match | Iliamna_Lake | Wikidata  | width : 35.0
+No match | Iliamna_Lake | Wikipedia | width : 22.0
+
+----------------Crystal_Springs_Reservoir---------------------
+No match | Crystal_Springs_Reservoir | Wikidata  | area : None
+No match | Crystal_Springs_Reservoir | Wikipedia | area : 1323.0
+No match | Crystal_Springs_Reservoir | Wikidata  | elevation : None
+No match | Crystal_Springs_Reservoir | Wikipedia | elevation : 85.0
+No match | Crystal_Springs_Reservoir | Wikidata  | volume : None
+No match | Crystal_Springs_Reservoir | Wikipedia | volume : 57910.0
+
+----------------Lake_Flower---------------------
+
+----------------Topaz_Lake---------------------
+No match | Topaz_Lake | Wikidata  | depth : None
+No match | Topaz_Lake | Wikipedia | depth : 52.0
+No match | Topaz_Lake | Wikidata  | elevation : 5010.0
+No match | Topaz_Lake | Wikipedia | elevation : None
+No match | Topaz_Lake | Wikidata  | gnis_id : 861754
+No match | Topaz_Lake | Wikipedia | gnis_id : None
+No match | Topaz_Lake | Wikidata  | length : None
+No match | Topaz_Lake | Wikipedia | length : 3.5
+No match | Topaz_Lake | Wikidata  | volume : None
+No match | Topaz_Lake | Wikipedia | volume : 126000.0
+No match | Topaz_Lake | Wikidata  | width : None
+No match | Topaz_Lake | Wikipedia | width : 1.5
+
+----------------Walker_Lake_(Northwest_Arctic,_Alaska)---------------------
+No match | Walker_Lake_(Northwest_Arctic,_Alaska) | Wikidata  | gnis_id : 1414240
+No match | Walker_Lake_(Northwest_Arctic,_Alaska) | Wikipedia | gnis_id : None
+
+----------------Cayuga_Lake---------------------
+No match | Cayuga_Lake | Wikidata  | area : None
+No match | Cayuga_Lake | Wikipedia | area : 172.0
+No match | Cayuga_Lake | Wikidata  | depth : 132.6
+No match | Cayuga_Lake | Wikipedia | depth : 182.0
+No match | Cayuga_Lake | Wikidata  | elevation : 1164.0
+No match | Cayuga_Lake | Wikipedia | elevation : 381.0
+No match | Cayuga_Lake | Wikidata  | length : None
+No match | Cayuga_Lake | Wikipedia | length : 38.0
+No match | Cayuga_Lake | Wikidata  | volume : None
+No match | Cayuga_Lake | Wikipedia | volume : 9.46
+No match | Cayuga_Lake | Wikidata  | width : None
+No match | Cayuga_Lake | Wikipedia | width : 3.5
+
+----------------Lake_St._Clair---------------------
+No match | Lake_St._Clair | Wikidata  | area : 1114.0
+No match | Lake_St._Clair | Wikipedia | area : 430.0
+No match | Lake_St._Clair | Wikidata  | depth : 3.4
+No match | Lake_St._Clair | Wikipedia | depth : 11.0
+No match | Lake_St._Clair | Wikidata  | elevation : 175.0
+No match | Lake_St._Clair | Wikipedia | elevation : 574.0
+No match | Lake_St._Clair | Wikidata  | length : 42.0
+No match | Lake_St._Clair | Wikipedia | length : 26.0
+No match | Lake_St._Clair | Wikidata  | volume : 3400.0
+No match | Lake_St._Clair | Wikipedia | volume : 0.82
+No match | Lake_St._Clair | Wikidata  | width : 39.0
+No match | Lake_St._Clair | Wikipedia | width : 24.0
+
+----------------Forked_Lake---------------------
+No match | Forked_Lake | Wikidata  | area : None
+No match | Forked_Lake | Wikipedia | area : 1248.0
+No match | Forked_Lake | Wikidata  | depth : 22.5
+No match | Forked_Lake | Wikipedia | depth : 21.0
+No match | Forked_Lake | Wikidata  | elevation : 531.0
+No match | Forked_Lake | Wikipedia | elevation : 1742.0
+No match | Forked_Lake | Wikidata  | length : None
+No match | Forked_Lake | Wikipedia | length : 7.0
+No match | Forked_Lake | Wikidata  | width : None
+No match | Forked_Lake | Wikipedia | width : 3.8
+
+----------------Jenny_Lake---------------------
+No match | Jenny_Lake | Wikidata  | area : 4.35
+No match | Jenny_Lake | Wikipedia | area : 1191.0
+No match | Jenny_Lake | Wikidata  | depth : 79.0
+No match | Jenny_Lake | Wikipedia | depth : None
+No match | Jenny_Lake | Wikidata  | elevation : 2067.0
+No match | Jenny_Lake | Wikipedia | elevation : 6783.0
+No match | Jenny_Lake | Wikidata  | gnis_id : 1590084
+No match | Jenny_Lake | Wikipedia | gnis_id : None
+No match | Jenny_Lake | Wikidata  | length : None
+No match | Jenny_Lake | Wikipedia | length : 2.2
+No match | Jenny_Lake | Wikidata  | width : None
+No match | Jenny_Lake | Wikipedia | width : 1.2
+
+----------------Sabine_Lake---------------------
+No match | Sabine_Lake | Wikidata  | area : 364.0
+No match | Sabine_Lake | Wikipedia | area : None
+
+----------------Pyramid_Lake_(Nevada)---------------------
+No match | Pyramid_Lake_(Nevada) | Wikidata  | area : 487.0
+No match | Pyramid_Lake_(Nevada) | Wikipedia | area : 188.0
+No match | Pyramid_Lake_(Nevada) | Wikidata  | depth : 108.5
+No match | Pyramid_Lake_(Nevada) | Wikipedia | depth : None
+No match | Pyramid_Lake_(Nevada) | Wikidata  | elevation : 1155.0
+No match | Pyramid_Lake_(Nevada) | Wikipedia | elevation : 3796.0
+No match | Pyramid_Lake_(Nevada) | Wikidata  | gnis_id : None
+No match | Pyramid_Lake_(Nevada) | Wikipedia | gnis_id : 856349
+No match | Pyramid_Lake_(Nevada) | Wikidata  | length : 48.0
+No match | Pyramid_Lake_(Nevada) | Wikipedia | length : 29.0
+No match | Pyramid_Lake_(Nevada) | Wikidata  | volume : 29.2
+No match | Pyramid_Lake_(Nevada) | Wikipedia | volume : 23660000.0
+No match | Pyramid_Lake_(Nevada) | Wikidata  | width : 14.0
+No match | Pyramid_Lake_(Nevada) | Wikipedia | width : 8.7
+
+----------------Enid_Lake---------------------
+No match | Enid_Lake | Wikidata  | elevation : None
+No match | Enid_Lake | Wikipedia | elevation : 266.0
+No match | Enid_Lake | Wikidata  | gnis_id : 691643
+No match | Enid_Lake | Wikipedia | gnis_id : None
+
+----------------Tippecanoe_Lake---------------------
+No match | Tippecanoe_Lake | Wikidata  | area : 360.0
+No match | Tippecanoe_Lake | Wikipedia | area : 880.0
+No match | Tippecanoe_Lake | Wikidata  | elevation : 225.0
+No match | Tippecanoe_Lake | Wikipedia | elevation : None
+No match | Tippecanoe_Lake | Wikidata  | gnis_id : 444781
+No match | Tippecanoe_Lake | Wikipedia | gnis_id : None
+
+----------------Saint_Mary_Lake---------------------
+No match | Saint_Mary_Lake | Wikidata  | area : 15.8
+No match | Saint_Mary_Lake | Wikipedia | area : 3923.0
+No match | Saint_Mary_Lake | Wikidata  | depth : 100.0
+No match | Saint_Mary_Lake | Wikipedia | depth : None
+No match | Saint_Mary_Lake | Wikidata  | elevation : 1367.0
+No match | Saint_Mary_Lake | Wikipedia | elevation : 4484.0
+No match | Saint_Mary_Lake | Wikidata  | gnis_id : 776122
+No match | Saint_Mary_Lake | Wikipedia | gnis_id : None
+No match | Saint_Mary_Lake | Wikidata  | length : 15.9
+No match | Saint_Mary_Lake | Wikipedia | length : 9.9
+
+----------------Barr_Lake_State_Park---------------------
+No match | Barr_Lake_State_Park | Wikidata  | area : None
+No match | Barr_Lake_State_Park | Wikipedia | area : 2715.0
+
+----------------Bear_Canyon_Lake---------------------
+No match | Bear_Canyon_Lake | Wikidata  | area : None
+No match | Bear_Canyon_Lake | Wikipedia | area : 60.0
+No match | Bear_Canyon_Lake | Wikidata  | elevation : None
+No match | Bear_Canyon_Lake | Wikipedia | elevation : 7560.0
+No match | Bear_Canyon_Lake | Wikidata  | gnis_id : 26072
+No match | Bear_Canyon_Lake | Wikipedia | gnis_id : None
+
+----------------Becharof_Lake---------------------
+No match | Becharof_Lake | Wikidata  | area : None
+No match | Becharof_Lake | Wikipedia | area : 453.0
+No match | Becharof_Lake | Wikidata  | elevation : None
+No match | Becharof_Lake | Wikipedia | elevation : 13.0
+No match | Becharof_Lake | Wikidata  | gnis_id : 1398817
+No match | Becharof_Lake | Wikipedia | gnis_id : None
+No match | Becharof_Lake | Wikidata  | length : None
+No match | Becharof_Lake | Wikipedia | length : 37.0
+
+----------------Diamond_Lake_(Oregon)---------------------
+No match | Diamond_Lake_(Oregon) | Wikidata  | area : 11.43
+No match | Diamond_Lake_(Oregon) | Wikipedia | area : 3040.0
+No match | Diamond_Lake_(Oregon) | Wikidata  | depth : 16.0
+No match | Diamond_Lake_(Oregon) | Wikipedia | depth : 24.0
+No match | Diamond_Lake_(Oregon) | Wikidata  | elevation : 1580.0
+No match | Diamond_Lake_(Oregon) | Wikipedia | elevation : 5183.0
+No match | Diamond_Lake_(Oregon) | Wikidata  | gnis_id : 1140999
+No match | Diamond_Lake_(Oregon) | Wikipedia | gnis_id : None
+No match | Diamond_Lake_(Oregon) | Wikidata  | length : 5.6
+No match | Diamond_Lake_(Oregon) | Wikipedia | length : 3.5
+No match | Diamond_Lake_(Oregon) | Wikidata  | volume : None
+No match | Diamond_Lake_(Oregon) | Wikipedia | volume : 77100.0
+No match | Diamond_Lake_(Oregon) | Wikidata  | width : 2.4
+No match | Diamond_Lake_(Oregon) | Wikipedia | width : 1.5
+
+----------------Lake_Quinault---------------------
+No match | Lake_Quinault | Wikidata  | elevation : 190.0
+No match | Lake_Quinault | Wikipedia | elevation : None
+No match | Lake_Quinault | Wikidata  | gnis_id : 1531495
+No match | Lake_Quinault | Wikipedia | gnis_id : None
+
+----------------Castle_Lake_(California)---------------------
+No match | Castle_Lake_(California) | Wikidata  | area : None
+No match | Castle_Lake_(California) | Wikipedia | area : 47.0
+No match | Castle_Lake_(California) | Wikidata  | elevation : None
+No match | Castle_Lake_(California) | Wikipedia | elevation : 5440.0
+
+----------------Lake_of_the_Woods---------------------
+No match | Lake_of_the_Woods | Wikidata  | area : 4350.0
+No match | Lake_of_the_Woods | Wikipedia | area : 1679.0
+No match | Lake_of_the_Woods | Wikidata  | depth : 64.0
+No match | Lake_of_the_Woods | Wikipedia | depth : None
+No match | Lake_of_the_Woods | Wikidata  | elevation : 322.0
+No match | Lake_of_the_Woods | Wikipedia | elevation : 1056.0
+No match | Lake_of_the_Woods | Wikidata  | length : 110.0
+No match | Lake_of_the_Woods | Wikipedia | length : 68.0
+No match | Lake_of_the_Woods | Wikidata  | width : 95.0
+No match | Lake_of_the_Woods | Wikipedia | width : 59.0
+
+----------------Lake_Miccosukee---------------------
+
+----------------Black_Canyon_Lake_(Arizona)---------------------
+No match | Black_Canyon_Lake_(Arizona) | Wikidata  | area : None
+No match | Black_Canyon_Lake_(Arizona) | Wikipedia | area : 78.0
+No match | Black_Canyon_Lake_(Arizona) | Wikidata  | depth : None
+No match | Black_Canyon_Lake_(Arizona) | Wikipedia | depth : 35.0
+No match | Black_Canyon_Lake_(Arizona) | Wikidata  | elevation : None
+No match | Black_Canyon_Lake_(Arizona) | Wikipedia | elevation : 7.0
+No match | Black_Canyon_Lake_(Arizona) | Wikidata  | gnis_id : 40153
+No match | Black_Canyon_Lake_(Arizona) | Wikipedia | gnis_id : None
+
+----------------Lake_Billy_Chinook---------------------
+No match | Lake_Billy_Chinook | Wikidata  | area : None
+No match | Lake_Billy_Chinook | Wikipedia | area : 4000.0
+No match | Lake_Billy_Chinook | Wikidata  | depth : None
+No match | Lake_Billy_Chinook | Wikipedia | depth : 102.0
+No match | Lake_Billy_Chinook | Wikidata  | elevation : None
+No match | Lake_Billy_Chinook | Wikipedia | elevation : 1945.0
+No match | Lake_Billy_Chinook | Wikidata  | length : None
+No match | Lake_Billy_Chinook | Wikipedia | length : 28.0
+
+----------------Lake_Blackshear---------------------
+No match | Lake_Blackshear | Wikidata  | area : None
+No match | Lake_Blackshear | Wikipedia | area : 8500.0
+No match | Lake_Blackshear | Wikidata  | depth : None
+No match | Lake_Blackshear | Wikipedia | depth : 10.0
+No match | Lake_Blackshear | Wikidata  | elevation : None
+No match | Lake_Blackshear | Wikipedia | elevation : 237.0
+No match | Lake_Blackshear | Wikidata  | gnis_id : 311506
+No match | Lake_Blackshear | Wikipedia | gnis_id : None
+No match | Lake_Blackshear | Wikidata  | length : None
+No match | Lake_Blackshear | Wikipedia | length : 20.0
+No match | Lake_Blackshear | Wikidata  | width : None
+No match | Lake_Blackshear | Wikipedia | width : 1.0
+
+----------------Lake_Hartwell---------------------
+No match | Lake_Hartwell | Wikidata  | area : None
+No match | Lake_Hartwell | Wikipedia | area : 56000.0
+No match | Lake_Hartwell | Wikidata  | depth : None
+No match | Lake_Hartwell | Wikipedia | depth : 45.0
+
+----------------Lake_Lyndon_B._Johnson---------------------
+No match | Lake_Lyndon_B._Johnson | Wikidata  | area : None
+No match | Lake_Lyndon_B._Johnson | Wikipedia | area : 6534.0
+No match | Lake_Lyndon_B._Johnson | Wikidata  | elevation : None
+No match | Lake_Lyndon_B._Johnson | Wikipedia | elevation : 825.0
+
+----------------Lake_Meredith---------------------
+No match | Lake_Meredith | Wikidata  | elevation : None
+No match | Lake_Meredith | Wikipedia | elevation : 2936.0
+No match | Lake_Meredith | Wikidata  | gnis_id : 1374882
+No match | Lake_Meredith | Wikipedia | gnis_id : None
+No match | Lake_Meredith | Wikidata  | volume : None
+No match | Lake_Meredith | Wikipedia | volume : 779556.0
+
+----------------Lake_Mohave---------------------
+No match | Lake_Mohave | Wikidata  | area : 107.0
+No match | Lake_Mohave | Wikipedia | area : 26500.0
+No match | Lake_Mohave | Wikidata  | depth : 23.0
+No match | Lake_Mohave | Wikipedia | depth : 75.0
+No match | Lake_Mohave | Wikidata  | elevation : 197.0
+No match | Lake_Mohave | Wikipedia | elevation : 647.0
+No match | Lake_Mohave | Wikidata  | volume : 0.2461
+No match | Lake_Mohave | Wikipedia | volume : 246.0
+
+----------------Lake_Norman---------------------
+No match | Lake_Norman | Wikidata  | area : None
+No match | Lake_Norman | Wikipedia | area : 50.0
+No match | Lake_Norman | Wikidata  | depth : None
+No match | Lake_Norman | Wikipedia | depth : 33.0
+No match | Lake_Norman | Wikidata  | elevation : None
+No match | Lake_Norman | Wikipedia | elevation : 760.0
+No match | Lake_Norman | Wikidata  | length : None
+No match | Lake_Norman | Wikipedia | length : 33.0
+No match | Lake_Norman | Wikidata  | width : None
+No match | Lake_Norman | Wikipedia | width : 9.0
+
+----------------Lake_Placid_(New_York)---------------------
+No match | Lake_Placid_(New_York) | Wikidata  | depth : 15.0
+No match | Lake_Placid_(New_York) | Wikipedia | depth : None
+No match | Lake_Placid_(New_York) | Wikidata  | elevation : 566.0
+No match | Lake_Placid_(New_York) | Wikipedia | elevation : None
+No match | Lake_Placid_(New_York) | Wikidata  | gnis_id : 960658
+No match | Lake_Placid_(New_York) | Wikipedia | gnis_id : None
+
+----------------Lake_Sakakawea---------------------
+No match | Lake_Sakakawea | Wikidata  | area : None
+No match | Lake_Sakakawea | Wikipedia | area : 307000.0
+No match | Lake_Sakakawea | Wikidata  | depth : 55.0
+No match | Lake_Sakakawea | Wikipedia | depth : None
+No match | Lake_Sakakawea | Wikidata  | elevation : 554.0
+No match | Lake_Sakakawea | Wikipedia | elevation : 1817.0
+No match | Lake_Sakakawea | Wikidata  | length : 21.0
+No match | Lake_Sakakawea | Wikipedia | length : 178.0
+No match | Lake_Sakakawea | Wikidata  | volume : None
+No match | Lake_Sakakawea | Wikipedia | volume : 23800000.0
+No match | Lake_Sakakawea | Wikidata  | width : 5.0
+No match | Lake_Sakakawea | Wikipedia | width : None
+
+----------------Lake_of_the_Ozarks---------------------
+No match | Lake_of_the_Ozarks | Wikidata  | area : None
+No match | Lake_of_the_Ozarks | Wikipedia | area : 54000.0
+No match | Lake_of_the_Ozarks | Wikidata  | elevation : None
+No match | Lake_of_the_Ozarks | Wikipedia | elevation : 659.0
+No match | Lake_of_the_Ozarks | Wikidata  | length : None
+No match | Lake_of_the_Ozarks | Wikipedia | length : 93.0
+No match | Lake_of_the_Ozarks | Wikidata  | volume : None
+No match | Lake_of_the_Ozarks | Wikipedia | volume : 1927000.0
+
+----------------Lower_Otay_Reservoir---------------------
+No match | Lower_Otay_Reservoir | Wikidata  | area : None
+No match | Lower_Otay_Reservoir | Wikipedia | area : 1100.0
+No match | Lower_Otay_Reservoir | Wikidata  | depth : None
+No match | Lower_Otay_Reservoir | Wikipedia | depth : 124.0
+No match | Lower_Otay_Reservoir | Wikidata  | elevation : None
+No match | Lower_Otay_Reservoir | Wikipedia | elevation : 381.0
+No match | Lower_Otay_Reservoir | Wikidata  | volume : None
+No match | Lower_Otay_Reservoir | Wikipedia | volume : 49500.0
+
+----------------McPhee_Reservoir---------------------
+No match | McPhee_Reservoir | Wikidata  | elevation : None
+No match | McPhee_Reservoir | Wikipedia | elevation : 6893.0
+No match | McPhee_Reservoir | Wikidata  | gnis_id : 196483
+No match | McPhee_Reservoir | Wikipedia | gnis_id : None
+No match | McPhee_Reservoir | Wikidata  | volume : None
+No match | McPhee_Reservoir | Wikipedia | volume : 381051.0
+
+----------------Walden_Pond---------------------
+No match | Walden_Pond | Wikidata  | depth : 31.0
+No match | Walden_Pond | Wikipedia | depth : None
+No match | Walden_Pond | Wikidata  | gnis_id : 611885
+No match | Walden_Pond | Wikipedia | gnis_id : None
+
+----------------Pymatuning_Reservoir---------------------
+No match | Pymatuning_Reservoir | Wikidata  | area : None
+No match | Pymatuning_Reservoir | Wikipedia | area : 17088.0
+No match | Pymatuning_Reservoir | Wikidata  | depth : None
+No match | Pymatuning_Reservoir | Wikipedia | depth : 15.0
+No match | Pymatuning_Reservoir | Wikidata  | elevation : None
+No match | Pymatuning_Reservoir | Wikipedia | elevation : 1001.0
+No match | Pymatuning_Reservoir | Wikidata  | length : None
+No match | Pymatuning_Reservoir | Wikipedia | length : 17.0
+No match | Pymatuning_Reservoir | Wikidata  | volume : None
+No match | Pymatuning_Reservoir | Wikipedia | volume : 64300000000.0
+No match | Pymatuning_Reservoir | Wikidata  | width : None
+No match | Pymatuning_Reservoir | Wikipedia | width : 1.6
+
+----------------Saguaro_Lake---------------------
+No match | Saguaro_Lake | Wikidata  | area : None
+No match | Saguaro_Lake | Wikipedia | area : 1264.0
+No match | Saguaro_Lake | Wikidata  | depth : None
+No match | Saguaro_Lake | Wikipedia | depth : 90.0
+No match | Saguaro_Lake | Wikidata  | elevation : None
+No match | Saguaro_Lake | Wikipedia | elevation : 1506.0
+No match | Saguaro_Lake | Wikidata  | gnis_id : 33945
+No match | Saguaro_Lake | Wikipedia | gnis_id : None
+
+----------------San_Andreas_Lake---------------------
+No match | San_Andreas_Lake | Wikidata  | area : None
+No match | San_Andreas_Lake | Wikipedia | area : 550.0
+No match | San_Andreas_Lake | Wikidata  | elevation : None
+No match | San_Andreas_Lake | Wikipedia | elevation : 453.0
+No match | San_Andreas_Lake | Wikidata  | length : None
+No match | San_Andreas_Lake | Wikipedia | length : 4.8
+No match | San_Andreas_Lake | Wikidata  | volume : None
+No match | San_Andreas_Lake | Wikipedia | volume : 19027.0
+
+----------------Sardis_Lake_(Mississippi)---------------------
+No match | Sardis_Lake_(Mississippi) | Wikidata  | area : None
+No match | Sardis_Lake_(Mississippi) | Wikipedia | area : 98520.0
+No match | Sardis_Lake_(Mississippi) | Wikidata  | gnis_id : 694715
+No match | Sardis_Lake_(Mississippi) | Wikipedia | gnis_id : None
+No match | Sardis_Lake_(Mississippi) | Wikidata  | volume : None
+No match | Sardis_Lake_(Mississippi) | Wikipedia | volume : 1512000.0
+
+----------------Sheldon_Lake---------------------
+No match | Sheldon_Lake | Wikidata  | area : None
+No match | Sheldon_Lake | Wikipedia | area : 1230.0
+No match | Sheldon_Lake | Wikidata  | elevation : None
+No match | Sheldon_Lake | Wikipedia | elevation : 47.0
+No match | Sheldon_Lake | Wikidata  | volume : None
+No match | Sheldon_Lake | Wikipedia | volume : 5354.0
+
+----------------Tempe_Town_Lake---------------------
+No match | Tempe_Town_Lake | Wikidata  | area : None
+No match | Tempe_Town_Lake | Wikipedia | area : 224.0
+No match | Tempe_Town_Lake | Wikidata  | depth : None
+No match | Tempe_Town_Lake | Wikipedia | depth : 16.0
+No match | Tempe_Town_Lake | Wikidata  | elevation : None
+No match | Tempe_Town_Lake | Wikipedia | elevation : 1150.0
+No match | Tempe_Town_Lake | Wikidata  | length : None
+No match | Tempe_Town_Lake | Wikipedia | length : 2.0
+No match | Tempe_Town_Lake | Wikidata  | volume : None
+No match | Tempe_Town_Lake | Wikipedia | volume : 977.0
+No match | Tempe_Town_Lake | Wikidata  | width : None
+No match | Tempe_Town_Lake | Wikipedia | width : 1200.0
+
+----------------Trinity_Lake---------------------
+No match | Trinity_Lake | Wikidata  | elevation : None
+No match | Trinity_Lake | Wikipedia | elevation : 2387.0
+No match | Trinity_Lake | Wikidata  | gnis_id : 255079
+No match | Trinity_Lake | Wikipedia | gnis_id : None
+No match | Trinity_Lake | Wikidata  | volume : None
+No match | Trinity_Lake | Wikipedia | volume : 2447650.0
+
+----------------Watauga_Lake---------------------
+No match | Watauga_Lake | Wikidata  | depth : None
+No match | Watauga_Lake | Wikipedia | depth : 16.0
+No match | Watauga_Lake | Wikidata  | elevation : None
+No match | Watauga_Lake | Wikipedia | elevation : 1959.0
+No match | Watauga_Lake | Wikidata  | gnis_id : 1273873
+No match | Watauga_Lake | Wikipedia | gnis_id : None
+No match | Watauga_Lake | Wikidata  | length : None
+No match | Watauga_Lake | Wikipedia | length : 16.0
+
+----------------Willow_Springs_Lake---------------------
+No match | Willow_Springs_Lake | Wikidata  | area : None
+No match | Willow_Springs_Lake | Wikipedia | area : 158.0
+No match | Willow_Springs_Lake | Wikidata  | depth : None
+No match | Willow_Springs_Lake | Wikipedia | depth : 60.0
+No match | Willow_Springs_Lake | Wikidata  | elevation : None
+No match | Willow_Springs_Lake | Wikipedia | elevation : 7.0
+No match | Willow_Springs_Lake | Wikidata  | gnis_id : 38184
+No match | Willow_Springs_Lake | Wikipedia | gnis_id : None
+
+----------------Lake_Houston---------------------
+No match | Lake_Houston | Wikidata  | area : None
+No match | Lake_Houston | Wikipedia | area : 11854.0
+No match | Lake_Houston | Wikidata  | elevation : None
+No match | Lake_Houston | Wikipedia | elevation : 44.0
+No match | Lake_Houston | Wikidata  | volume : None
+No match | Lake_Houston | Wikipedia | volume : 160000.0
+
+----------------Kentucky_Lake---------------------
+
+----------------Toronto_Lake_(Kansas)---------------------
+
+----------------Crowley_Lake---------------------
+No match | Crowley_Lake | Wikidata  | area : None
+No match | Crowley_Lake | Wikipedia | area : 5300.0
+No match | Crowley_Lake | Wikidata  | depth : None
+No match | Crowley_Lake | Wikipedia | depth : 40.0
+No match | Crowley_Lake | Wikidata  | elevation : None
+No match | Crowley_Lake | Wikipedia | elevation : 6.0
+No match | Crowley_Lake | Wikidata  | length : None
+No match | Crowley_Lake | Wikipedia | length : 12.0
+No match | Crowley_Lake | Wikidata  | width : None
+No match | Crowley_Lake | Wikipedia | width : 5.0
+
+----------------Seven_Seas_Lagoon---------------------
+No match | Seven_Seas_Lagoon | Wikidata  | depth : 4.3
+No match | Seven_Seas_Lagoon | Wikipedia | depth : None
+
+----------------Lake_Waynoka,_Ohio---------------------
+No match | Lake_Waynoka,_Ohio | Wikidata  | area : 12.402787
+No match | Lake_Waynoka,_Ohio | Wikipedia | area : None
+No match | Lake_Waynoka,_Ohio | Wikidata  | elevation : 1000.0
+No match | Lake_Waynoka,_Ohio | Wikipedia | elevation : None
+No match | Lake_Waynoka,_Ohio | Wikidata  | gnis_id : 2628922
+No match | Lake_Waynoka,_Ohio | Wikipedia | gnis_id : None
+
+----------------Trillium_Lake---------------------
+No match | Trillium_Lake | Wikidata  | area : None
+No match | Trillium_Lake | Wikipedia | area : 65.0
+No match | Trillium_Lake | Wikidata  | depth : None
+No match | Trillium_Lake | Wikipedia | depth : 7.0
+No match | Trillium_Lake | Wikidata  | elevation : None
+No match | Trillium_Lake | Wikipedia | elevation : 3601.0
+No match | Trillium_Lake | Wikidata  | gnis_id : 1151417
+No match | Trillium_Lake | Wikipedia | gnis_id : None
+No match | Trillium_Lake | Wikidata  | length : None
+No match | Trillium_Lake | Wikipedia | length : 3000.0
+No match | Trillium_Lake | Wikidata  | volume : None
+No match | Trillium_Lake | Wikipedia | volume : 380.0
+No match | Trillium_Lake | Wikidata  | width : None
+No match | Trillium_Lake | Wikipedia | width : 1400.0
+
+----------------Diamond_Valley_Lake---------------------
+No match | Diamond_Valley_Lake | Wikidata  | area : None
+No match | Diamond_Valley_Lake | Wikipedia | area : 4500.0
+No match | Diamond_Valley_Lake | Wikidata  | gnis_id : 2358949
+No match | Diamond_Valley_Lake | Wikipedia | gnis_id : None
+
+----------------Franklin_D._Roosevelt_Lake---------------------
+No match | Franklin_D._Roosevelt_Lake | Wikidata  | area : 320.0
+No match | Franklin_D._Roosevelt_Lake | Wikipedia | area : 125.0
+No match | Franklin_D._Roosevelt_Lake | Wikidata  | depth : 121.0
+No match | Franklin_D._Roosevelt_Lake | Wikipedia | depth : None
+No match | Franklin_D._Roosevelt_Lake | Wikidata  | gnis_id : 1534225
+No match | Franklin_D._Roosevelt_Lake | Wikipedia | gnis_id : None
+
+----------------Banks_Lake---------------------
+No match | Banks_Lake | Wikidata  | depth : 14.0
+No match | Banks_Lake | Wikipedia | depth : 46.0
+No match | Banks_Lake | Wikidata  | elevation : None
+No match | Banks_Lake | Wikipedia | elevation : 1571.0
+No match | Banks_Lake | Wikidata  | length : 43.0
+No match | Banks_Lake | Wikipedia | length : 31.0
+No match | Banks_Lake | Wikidata  | volume : None
+No match | Banks_Lake | Wikipedia | volume : 1237000.0
+
+----------------Chesuncook_Lake---------------------
+No match | Chesuncook_Lake | Wikidata  | area : 102.0
+No match | Chesuncook_Lake | Wikipedia | area : 25183.0
+No match | Chesuncook_Lake | Wikidata  | depth : 46.0
+No match | Chesuncook_Lake | Wikipedia | depth : 40.0
+No match | Chesuncook_Lake | Wikidata  | elevation : 287.0
+No match | Chesuncook_Lake | Wikipedia | elevation : 942.0
+No match | Chesuncook_Lake | Wikidata  | gnis_id : 563924
+No match | Chesuncook_Lake | Wikipedia | gnis_id : None
+No match | Chesuncook_Lake | Wikidata  | length : 35.0
+No match | Chesuncook_Lake | Wikipedia | length : 22.0
+No match | Chesuncook_Lake | Wikidata  | volume : 0.168576
+No match | Chesuncook_Lake | Wikipedia | volume : 136667.0
+No match | Chesuncook_Lake | Wikidata  | width : 5.0
+No match | Chesuncook_Lake | Wikipedia | width : 1.0
+
+----------------Diablo_Lake---------------------
+No match | Diablo_Lake | Wikidata  | area : 3.68
+No match | Diablo_Lake | Wikipedia | area : None
+No match | Diablo_Lake | Wikidata  | elevation : 366.0
+No match | Diablo_Lake | Wikipedia | elevation : 1201.0
+No match | Diablo_Lake | Wikidata  | gnis_id : 1518742
+No match | Diablo_Lake | Wikipedia | gnis_id : None
+
+----------------Lake_Hamilton_and_Lake_Catherine---------------------
+No match | Lake_Hamilton_and_Lake_Catherine | Wikidata  | area : None
+No match | Lake_Hamilton_and_Lake_Catherine | Wikipedia | area : 7200.0
+
+----------------Hebgen_Lake---------------------
+No match | Hebgen_Lake | Wikidata  | area : None
+No match | Hebgen_Lake | Wikipedia | area : 21.0
+No match | Hebgen_Lake | Wikidata  | length : None
+No match | Hebgen_Lake | Wikipedia | length : 15.0
+No match | Hebgen_Lake | Wikidata  | volume : None
+No match | Hebgen_Lake | Wikipedia | volume : 524333333.0
+No match | Hebgen_Lake | Wikidata  | width : None
+No match | Hebgen_Lake | Wikipedia | width : 4.0
+
+----------------Lake_Murray_(California)---------------------
+No match | Lake_Murray_(California) | Wikidata  | area : None
+No match | Lake_Murray_(California) | Wikipedia | area : 171.0
+No match | Lake_Murray_(California) | Wikidata  | gnis_id : 246390
+No match | Lake_Murray_(California) | Wikipedia | gnis_id : None
+
+----------------New_Melones_Lake---------------------
+No match | New_Melones_Lake | Wikidata  | area : None
+No match | New_Melones_Lake | Wikipedia | area : 5100.0
+No match | New_Melones_Lake | Wikidata  | elevation : None
+No match | New_Melones_Lake | Wikipedia | elevation : 331.0
+No match | New_Melones_Lake | Wikidata  | volume : 2960.0
+No match | New_Melones_Lake | Wikipedia | volume : 2400000.0
+
+----------------Lake_Piru---------------------
+No match | Lake_Piru | Wikidata  | area : 5.0
+No match | Lake_Piru | Wikipedia | area : 1240.0
+No match | Lake_Piru | Wikidata  | elevation : 318.0
+No match | Lake_Piru | Wikipedia | elevation : 1043.0
+No match | Lake_Piru | Wikidata  | volume : 102680.0
+No match | Lake_Piru | Wikipedia | volume : 83244.0
+
+----------------Potholes_Reservoir---------------------
+No match | Potholes_Reservoir | Wikidata  | gnis_id : 1513187
+No match | Potholes_Reservoir | Wikipedia | gnis_id : None
+
+----------------Lake_Siskiyou---------------------
+No match | Lake_Siskiyou | Wikidata  | area : 1.74
+No match | Lake_Siskiyou | Wikipedia | area : 430.0
+No match | Lake_Siskiyou | Wikidata  | elevation : 971.0
+No match | Lake_Siskiyou | Wikipedia | elevation : 3185.0
+No match | Lake_Siskiyou | Wikidata  | gnis_id : 276818
+No match | Lake_Siskiyou | Wikipedia | gnis_id : None
+No match | Lake_Siskiyou | Wikidata  | volume : None
+No match | Lake_Siskiyou | Wikipedia | volume : 26000.0
+
+----------------Lake_Seminole---------------------
+No match | Lake_Seminole | Wikidata  | area : 152.0
+No match | Lake_Seminole | Wikipedia | area : 37500.0
+No match | Lake_Seminole | Wikidata  | depth : 9.0
+No match | Lake_Seminole | Wikipedia | depth : 10.0
+No match | Lake_Seminole | Wikidata  | elevation : None
+No match | Lake_Seminole | Wikipedia | elevation : 77.0
+No match | Lake_Seminole | Wikidata  | length : 56.0
+No match | Lake_Seminole | Wikipedia | length : 35.0
+No match | Lake_Seminole | Wikidata  | width : 3.2
+No match | Lake_Seminole | Wikipedia | width : 2.0

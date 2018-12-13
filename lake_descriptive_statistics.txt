@@ -1,0 +1,35 @@
+-----------------------------------------      
+DESCRIPTIVE STATISTICS: SUM OF OCCURENCES      
+-----------------------------------------
+
+-----------------------------------------         
+Total number of Wikidata articles: 111
+-----------------------------------------
+lake_name: 111
+wikipedia_url: 111
+wikidata_item_id: 111
+coords: 111
+inflow: 66
+outflow: 64
+elevation: 42
+area: 41
+length: 25
+width: 20
+volume: 13
+watershed_area: 6
+perimeter: 1
+residence_time: 15
+depth: 39
+gnis_id: 59
+geo_name_id: 91
+
+-----------------------------------------
+Total number of Wikipedia articles: 108
+-----------------------------------------
+elevation: 71
+area: 81
+length: 49
+width: 36
+volume: 42
+depth: 42
+gnis_id: 7
