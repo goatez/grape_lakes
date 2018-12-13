@@ -19,7 +19,6 @@ In order to compare the Wikipedia and Wikidata U.S. Lake articles, I needed to c
 
 Lake Properties: as defined on the Wikidata page for the WikiProject Lakes<br />
 
- 
 •	country<br />
 •	coordinate location<br />
 •	lake inflows<br />
@@ -34,8 +33,7 @@ Lake Properties: as defined on the Wikidata page for the WikiProject Lakes<br />
 •	residence time of water<br />
 •	vertical depth<br />
  
-
-Additionally, the following fields are also included in my search:<br /> 
+Additionally, the following fields were also included in my search:<br /> 
 
 •	GNIS ID #<br />
 •	Geo-name ID #<br />
@@ -63,7 +61,7 @@ These are the lake properties that I will not be comparing, again, for sake of t
 •	Geo-name ID #<br />
  
 SPARQL Query<br />
-In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties.. I used Wikidata Query Helper to create the SPARQL query:<br/> 
+In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties, using the Wikidata Query Helper to create the query:<br/> 
 http://tinyurl.com/yccoohx2.<br /> 
 Using SPARQLWrapper as an endpoint interface into Python so I could save the results as a dictionary, my query returned a JSON structure containing the properties listed above. This was then able to be manipulated and used to create the dictionaries.
 
@@ -71,10 +69,10 @@ Wikidata<br />
 For the Wikidata dictionary, I used the Wikipedia lake page name as the key (parsed from the Wikipedia URL that was retrieved through the SPARQL query), with the dictionary of properties as the value. Basically a dictionary of dictionaries. Within each nested dictionary, the key/value pairs were saved as: lake property/property value. There was also a third dictionary within the Wikidata dictionary – a dictionary consisting of each lake that does not have a Wikipedia article, and thus no Wikipedia lake page name. For this dictionary, I used the Wikidata Qlabel from the lake’s Wikidata article. 
 
 Wikipedia<br />
-For the Wikipedia page, I used wptools 0.4.17, which contains Wikipedia tools (for humans) used for extracting data from Wikipedia, Wikidata, and other MediaWikis via Python. Wptools uses a Wikipedia article name as its argument, and can be used to parse any portion of a Wikipedia page. In this instance, I used it to parse the infoboxes. One limitation I encountered was wptools not being able to handle special characters, including apostrophes. As I iterated through the results from the SPARQL query, and in the same fashion as I created the key names for the Wikidata dictionary, I used the Wikipedia lake page name taken from the Wikipedia URL. I saved the results, which wptools saves in dictionary form, into a dictionary, using the same key/value structure as the Wikidata dictionaries. The output from wptools is less normalized than the output from the SPARQL query, since wptools basically is scraping from the actual page, so the results had to be stripped and manipulated to match the form used for the Wikidata dictionaries. For this I used regex to strip away any unnecessary characters, and manipulated the data output for any other edge cases as necessary. I’ll let the code and the comments within the code speak for the specifics. Once this dictionary was created, the comparisons could begin.
+For the Wikipedia page, I used wptools 0.4.17, which contains Wikipedia tools (for humans) used for extracting data from Wikipedia, Wikidata, and other MediaWikis via Python. Wptools uses a Wikipedia article name as its argument, and can parse any portion of a Wikipedia page. In this instance, I used it to parse the infoboxes. One limitation I encountered was wptools not being able to handle special characters, including apostrophes. As I iterated through the results from the SPARQL query, I used the Wikipedia lake page name taken from the Wikipedia URL as the key. I saved the results, which wptools saves in dictionary form, into a dictionary, using the same key/value structure as the Wikidata dictionaries. The output from wptools is less normalized than the output from the SPARQL query since wptools basically is scraping from the actual page, so the results had to be stripped and/or manipulated to match the form used for the Wikidata dictionaries. For this I used regex to strip away any unnecessary characters, and manipulated the data output for any other edge cases as necessary. Once this dictionary was created, the comparisons between Wikipedia and Wikidata U.S. lakes articles could begin.
 
 Comparison and Descriptive Statistics<br />
 For the comparison, I saved the mismatches in a dictionary, which contained two dictionaries – Wikipedia and Wikidata. I also printed to a text file the name of lake, followed by any comparison mismatches. The descriptive statistics also output into a text file. 
 
 Future Scope<br />
-Moving forward, the two most pressing matters would be dealing with the special characters when using wptools to parse Wikipedia infoboxes, and finishing the comparison of all of the lake properties. Beyond that, searching through other Wikipedia’s abroad would be another goal. Also, within Wikipedia, I would need to verify that all edge cases and infobox templates were considered. Lastly, the SPARQL query itself should probably be worked on, to also gather more edge cases that I did not have an opportunity to explore. 
+Moving forward, the two most pressing matters would be dealing with the special characters when using wptools to parse Wikipedia infoboxes, and finishing the comparison of all of the lake properties. Beyond that, searching through other Wikipedia’s abroad would be another goal. Also, within Wikipedia, I would need to verify that all edge cases and infobox templates were considered. Lastly, the SPARQL query itself should probably be worked on, to also gather more edge cases that I did not have an opportunity to explore. Also, my code is not easily readable, and I do recognize that. The use of several functions for the various aspects of the code would make it much cleaner and readable to others, but within the time constraints I was not able to accomplish that.
