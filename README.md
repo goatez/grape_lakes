@@ -6,7 +6,7 @@ Resources:<br />
 https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes/Assessment<br />
 Wikidata ideal lake content that should be queryable: https://www.wikidata.org/wiki/Wikidata:WikiProject_Lakes<br />
 https://en.wikipedia.org/wiki/Template:Infobox_body_of_water<br />
-wptools: https://github.com/siznax/wptools<br />
+Wptools: https://github.com/siznax/wptools<br />
 
 Example Wikidata Item: https://www.wikidata.org/wiki/Q4738340<br />
 Example Wikipedia Page: https://en.wikipedia.org/wiki/Alvord_Lake_(Arizona)<br />
