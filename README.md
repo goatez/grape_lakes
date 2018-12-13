@@ -63,7 +63,7 @@ Properties not being compared:<br />
  
 SPARQL Query<br />
 In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties, using the Wikidata Query Helper to create the query: http://tinyurl.com/yccoohx2.<br /> 
-Using SPARQLWrapper as an endpoint interface into Python so I could save the results as a dictionary, my query returned a JSON structure containing the properties listed above. This was then able to be manipulated and used to create the dictionaries.
+Using SPARQLWrapper as an endpoint interface into Python so I could save the results as a dictionary, my query returns a JSON structure containing the properties listed above. This was then able to be manipulated and used to create the dictionaries.
 
 Wikidata<br />
 For the Wikidata dictionary, I used the Wikipedia lake page name as the key (parsed from the Wikipedia URL that was retrieved through the SPARQL query), with the dictionary of properties as the value. Basically a dictionary of dictionaries. Within each nested dictionary, the key/value pairs were saved as: lake property/property value. There was also a third dictionary within the Wikidata dictionary – a dictionary consisting of each lake that does not have a Wikipedia article, and thus no Wikipedia lake page name. For this dictionary, I used the Wikidata Qlabel from the lake’s Wikidata article. 
