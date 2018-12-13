@@ -37,7 +37,7 @@ WHERE { ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   OPTIONAL { ?lake wdt:P590 ?GNIS_ID. }
   OPTIONAL { ?lake wdt:P1566 ?GeoNames_ID. }
 }
-LIMIT 150""")  # change or delete the limit here to alter the number of lakes to be included in your query
+LIMIT 1500""")  # change or delete the limit here to alter the number of lakes to be included in your query
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert()
