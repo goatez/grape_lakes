@@ -6,7 +6,8 @@ import json
 import pprint
 import wptools
 import re
-import os
+# import os
+# os.chdir('C:\\Users\\billy\\Documents\\GitHub\\grape_lakes')
 
 # wikidata query for all the lakes in the US
 sparql = SPARQLWrapper("https://query.wikidata.org/sparql")
@@ -36,7 +37,7 @@ WHERE { ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   OPTIONAL { ?lake wdt:P590 ?GNIS_ID. }
   OPTIONAL { ?lake wdt:P1566 ?GeoNames_ID. }
 }
-LIMIT 1500""")  # change or delete the limit here to alter the number of lakes to be included in your query
+LIMIT 150""")  # change or delete the limit here to alter the number of lakes to be included in your query
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert()
@@ -292,7 +293,7 @@ lake_dict['wikipedia_entries'] = clean_wikipedia
 # writing comparison list of properties that do not match to text file
 # saving list in new dictionary
 
-# TODO only completed a comparison on 7 of the 14 lake properties, still must
+# TODO only completed a comparison on 7 of the 14 lake properties
 
 lake_formating = ["area", "depth", "elevation", "gnis_id", "length", "volume", "width"]
 lake_properties_not_matching = {}
@@ -327,6 +328,7 @@ pprint.pprint(lake_properties_not_matching)
 
 ###################################DESCRIPTIVE STATISTICS###################################
 # IF YOU RUN JUST THIS SECTION OF CODE, BE SURE TO SET THE COUNTERS TO ZERO IN CODE ABOVE
+# AND BE SURE TO RE-RUN lake_format AND wikipedia_lake_format ABOVE
 
 x = str(len(lake_dict['wikidata_entries']))
 y = str(len(lake_dict['wikipedia_entries']))
@@ -350,6 +352,7 @@ f.write("\n-----------------------------------------\
 for properties in lake_format:
     f.write( "\n"+str(properties[0])+": "+ str(properties[3]) )
 
+
 # descriptive statistics for Wikipedia articles dictionary
 
 f.write("\n\n-----------------------------------------")
@@ -364,3 +367,12 @@ for properties in wikipedia_lake_format:
     f.write( "\n"+ str(properties[0])+ ": " + str(properties[2]) )
 
 f.close()
+
+##########################LAKE NAMES THAT WPTOOLS COULD NOT PROCESS##########################
+names = open("lake_names_could_not_compare.txt", "w")
+names.write("Wikipedia lake names that wptools could not process:\
+            \n-----------------------------------------\n")
+for line in bad_name:
+    names.write(line + "\n")
+
+names.close()
