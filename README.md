@@ -62,8 +62,7 @@ Properties not being compared:<br />
 •	Geo-name ID #<br />
  
 SPARQL Query<br />
-In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties, using the Wikidata Query Helper to create the query:<br/> 
-http://tinyurl.com/yccoohx2.<br /> 
+In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties, using the Wikidata Query Helper to create the query: http://tinyurl.com/yccoohx2.<br /> 
 Using SPARQLWrapper as an endpoint interface into Python so I could save the results as a dictionary, my query returned a JSON structure containing the properties listed above. This was then able to be manipulated and used to create the dictionaries.
 
 Wikidata<br />
