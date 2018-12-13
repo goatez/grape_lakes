@@ -37,15 +37,12 @@ Lake Properties: as defined on the Wikidata page for the WikiProject Lakes<br />
 
 Additionally, the following fields are also included in my search:<br /> 
 
- 
 •	GNIS ID #<br />
 •	Geo-name ID #<br />
- 
 
 Properties being compared<br />
 For the sake of time and project complexity, I have scaled down the scope of the project that was initially proposed; and I will be comparing the following properties.<br />
 
- 
 •	elevation above sea level (elevation)<br />
 •	area (area)<br />
 •	length (length)<br />
@@ -57,13 +54,13 @@ For the sake of time and project complexity, I have scaled down the scope of the
 Properties not being compared<br />
 These are the lake properties that I will not be comparing, again, for sake of time and project complexity.<br />
 
- 
 •	coordinate location<br />
 •	lake inflows<br />
 •	lake outflow<br />
 •	watershed area<br />
 •	perimeter<br />
 •	residence time of water<br />
+•	Geo-name ID #<br />
  
 SPARQL Query<br />
 In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties.. I used Wikidata Query Helper to create the SPARQL query:<br /> 
