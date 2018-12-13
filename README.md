@@ -6,7 +6,7 @@ Resources:<br />
 https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Lakes/Assessment<br />
 Wikidata ideal lake content that should be queryable: https://www.wikidata.org/wiki/Wikidata:WikiProject_Lakes<br />
 https://en.wikipedia.org/wiki/Template:Infobox_body_of_water<br />
-
+wptools: https://github.com/siznax/wptools<br />
 
 Example Wikidata Item: https://www.wikidata.org/wiki/Q4738340<br />
 Example Wikipedia Page: https://en.wikipedia.org/wiki/Alvord_Lake_(Arizona)<br />
@@ -63,7 +63,7 @@ These are the lake properties that I will not be comparing, again, for sake of t
 •	Geo-name ID #<br />
  
 SPARQL Query<br />
-In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties.. I used Wikidata Query Helper to create the SPARQL query:<br /> 
+In order to create the dictionaries, I first built a SPARQL query containing all the given lake properties.. I used Wikidata Query Helper to create the SPARQL query:<br/> 
 http://tinyurl.com/yccoohx2.<br /> 
 Using SPARQLWrapper as an endpoint interface into Python so I could save the results as a dictionary, my query returned a JSON structure containing the properties listed above. This was then able to be manipulated and used to create the dictionaries.
 
