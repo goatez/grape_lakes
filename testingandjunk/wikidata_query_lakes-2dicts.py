@@ -1,3 +1,4 @@
+# https://rdflib.github.io/sparqlwrapper/
 from SPARQLWrapper import SPARQLWrapper, JSON
 import json
 import pprint
@@ -30,7 +31,7 @@ WHERE { ?lake (wdt:P31/wdt:P279*) wd:Q23397.
   OPTIONAL { ?lake wdt:P590 ?GNIS_ID. }
   OPTIONAL { ?lake wdt:P1566 ?GeoNames_ID. }
 }
-LIMIT 40""")
+LIMIT 10""")
 sparql.setReturnFormat(JSON)
 
 results = sparql.query().convert()
@@ -62,18 +63,18 @@ geoname=0
 lake_format = [["lake_name", "lakeLabel", "value", label], \
                ["wikipedia_url", "article", "value", wikipedia_url], \
                ["wikidata_item_id", "lake", "value", wikidata_item_id], \
-               ["coordiantes", "coordinate_location", "value", coordinates], \
-               ["lake_inflow", "lake_inflows", "value", inflow], \
-               ["lake_outflow", "lake_outflow", "value", outflow], \
-               ["elevation_above_sea_level", "elevation_above_sea_level", "value", elevation], \
+               ["coords", "coordinate_location", "value", coordinates], \
+               ["inflow", "lake_inflows", "value", inflow], \
+               ["outflow", "lake_outflow", "value", outflow], \
+               ["elevation", "elevation_above_sea_level", "value", elevation], \
                ["area", "area", "value", area], \
                ["length", "length", "value", length], \
                ["width", "width", "value", width], \
-               ["volume_as_quantity", "volume_as_quantity", "value", volume], \
+               ["volume", "volume_as_quantity", "value", volume], \
                ["watershed_area", "watershed_area", "value", watershed], \
                ["perimeter", "perimeter", "value", perimeter], \
-               ["residence_time_of_water", "residence_time_of_water", "value", residence], \
-               ["vertical_depth", "vertical_depth", "value", depth], \
+               ["residence_time", "residence_time_of_water", "value", residence], \
+               ["depth", "vertical_depth", "value", depth], \
                ["gnis_id", "GNIS_ID", "value", gnis], \
                ["geo_name_id", "GeoNames_ID", "value", geoname]]
 
@@ -83,6 +84,7 @@ dict_without = {}
 for entry in results["results"]["bindings"]:
     for properties in lake_format:
         if properties[1] in entry:
+
             # dealing with any entries that are to be cast as float
             if properties[1] == 'elevation_above_sea_level' or properties[1] == 'area' or\
                                 properties[1] == 'length' or properties[1] == 'width' or\
@@ -90,46 +92,50 @@ for entry in results["results"]["bindings"]:
                                 properties[1] == 'perimeter' or properties[1] == 'residence_time_of_water' or\
                                 properties[1] == 'vertical_depth':
                 try:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] : float( entry[properties[1]][properties[2]] ) } )
                 except KeyError:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : float(entry[properties[1]][properties[2]]) }
+
             # dealing with entries that strip text
             elif properties[1] == 'lake_inflows' or properties[1] == 'lake_outflow':
                 # wikidata text
                 try:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
-                    .update({ properties[0] :  entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') } )
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')]\
+                    .update({ properties[0] :  entry[properties[1]][properties[2]].lstrip('http://www.wikidata.org/entity/') } )
                 except KeyError:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
-                    { properties[0] : entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/') }
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')] =\
+                    { properties[0] : entry[properties[1]][properties[2]].lstrip('http://www.wikidata.org/entity/') }
+
             # dealing with coordinates entry - spliting, casting as a float, and making a list
             elif properties[1] == 'coordinate_location':
                 c = list(map(float, entry[properties[1]][properties[2]].strip('Point()').split()))  # striping string to be cast to a float
                 coord = [{"lat" : c[0], "long" : c[1]}, c]  # creating dictionary of lat/long key pairing, and a list
                 try:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] : coord })
                 except KeyError:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : coord }
+
             # dealing with remaining entries containing lake properties
             else:
                 try:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')]\
                     .update({ properties[0] : entry[properties[1]][properties[2]] })
                 except KeyError:
-                    dict_with[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+                    dict_with[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')] =\
                     { properties[0] : entry[properties[1]][properties[2]] }
+
         # dealing with missing lake properties, saving to second dictionary as None
         else:
             try:
-                dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')]\
+                dict_without[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')]\
                 .update({ properties[0] : None })
             except KeyError:
             # pass
-                dict_without[entry["lake"]["value"].strip('http://www.wikidata.org/entity/')] =\
+                dict_without[entry["lake"]["value"].lstrip('http://www.wikidata.org/entity/')] =\
                 { properties[0] : None }
 
 # create one dictionary containing both dictionaries made above
@@ -138,6 +144,7 @@ lake_dict['existing_properties'] = dict_with
 lake_dict['missing_properties'] = dict_without
 
 pprint.pprint(lake_dict)
+
 
 ###################################DESCRIPTIVE STATISTICS###################################
 
@@ -154,3 +161,17 @@ for properties in lake_format:
     print( properties[0]+":", properties[3] )
 
 ##########################################TESTING##########################################
+
+# print(entry[properties[1]][properties[2]].strip('http://www.wikidata.org/entity/'))
+#
+#
+# test = results["results"]["bindings"][1]['article']['value'].strip('https://en.wikipedia.org')
+# print(test)
+#
+#
+#
+# for entry in results["results"]["bindings"]:
+#     print(entry['article']['value'].strip('https://en.wikipedia.org/wiki'))
+#
+#
+# pprint.pprint(results)

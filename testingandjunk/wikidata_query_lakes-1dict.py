@@ -1,6 +1,4 @@
 # https://rdflib.github.io/sparqlwrapper/
-# wikidata query: http://tinyurl.com/yatkw9da
-
 from SPARQLWrapper import SPARQLWrapper, JSON
 import json
 import pprint
