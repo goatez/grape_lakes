@@ -79,9 +79,9 @@ The code results in 4 different outputs: 3 text files and a screen print. The sc
 
 lake_properties_not_matching<br />
 
-The text file outputs are lake comparison mismatches, the lake dictionary descriptive statistics, and the lake names that wptools could not process, and thus were skipped.  The names of the outputted text files:<br /> 
+The text file outputs are lake comparison mismatches, the lake dictionary descriptive statistics, and the lake names that wptools could not process, and thus were skipped.  The names of the outputted text files include:<br /> 
 
-lake_compari<br />son_mismatches<br />
+lake_comparison_mismatches<br />
 lake_descriptive_statistics<br />
 lake_names_could_not_compare<br />
 
