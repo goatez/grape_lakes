@@ -75,10 +75,13 @@ Comparison and Descriptive Statistics<br />
 For the comparison, I saved the mismatches in a dictionary, which contained two dictionaries – one for properties of Wikipedia U.S. lake articles that do not match Wikidata, and the other dictionary for their non-matching Wikidata counterparts. I used this dictionary to output a list containing all mismatches of lake properties into a text file.  I also outputted to text file the descriptive statistics of the Wikipedia and Wikidata articles that were the basis of the comparisons. The descriptive statistics were of the lake properties that each dictionary contained, prior to the comparison.
 
 Output Details<br />
-The code results in 4 different outputs: 3 text files and a screen print. The screen print is of the dictionary containing non-matching lake properties: 
+The code results in 4 different outputs: 3 text files and a screen print. The screen print is of the dictionary containing non-matching lake properties:<br /> 
+
 lake_properties_not_matching<br />
-The text file outputs are lake comparison mismatches, the lake dictionary descriptive statistics, and the lake names that wptools could not process, and thus were skipped.  The names of the outputted text files: 
-lake_comparison_mismatches<br />
+
+The text file outputs are lake comparison mismatches, the lake dictionary descriptive statistics, and the lake names that wptools could not process, and thus were skipped.  The names of the outputted text files:<br /> 
+
+lake_compari<br />son_mismatches<br />
 lake_descriptive_statistics<br />
 lake_names_could_not_compare<br />
 
