@@ -85,10 +85,9 @@ lake_comparison_mismatches<br />
 lake_descriptive_statistics<br />
 lake_names_could_not_compare<br />
 
-Dictionaries/Lists of Interest which were created within the code:<br />
-Since the code is dreadfully unreadable, here is a list of the end-result dictionaries that are created:<br />
+Dictionaries/Lists of Potential Interest:<br />
+Since the code is dreadfully unreadable, here is a list of the end-result dictionaries that are created within the code:<br />
 
-Dictionary names (Short description)<br />
 •	results[“results”][“bindings”] (results of SPARQL query prior to cleaning/manipulating)<br />
 •	dict_wikipedia (wikipedia articles taken directly from wptools, prior to cleaning/manipulating)<br />
 •	lake_dict (Wikidata and Wikipedia U.S. Lakes, created from results of SPARQL query)<br />
