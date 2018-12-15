@@ -286,7 +286,6 @@ lake_dict['wikipedia_entries'] = clean_wikipedia
 
 # pprint.pprint(lake_dict)
 
-
 ###################################LAKE PROPERTY COMPARISON###################################
 
 # Comparing lake properties in Wikidata and Wikipedia dictionaries
@@ -300,7 +299,7 @@ lake_properties_not_matching = {}
 wikidata = {}
 wikipedia = {}
 
-file = open("lake_comparison.txt","w")
+file = open("lake_comparison_mismatches.txt","w")
 file.write("Lake Properties Not Matching: Wikidata vs. Wikipedia\n")
 for pond in lake_dict['wikipedia_entries']:
     file.write("\n----------------"+pond+"---------------------\n")
