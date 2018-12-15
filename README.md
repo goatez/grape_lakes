@@ -87,19 +87,19 @@ lake_names_could_not_compare<br />
 
 Dictionaries/Lists of Interest which were created within the code:<br />
 Since the code is dreadfully unreadable, here is a list of the end-result dictionaries that are created:<br />
-Dictionary names (Short description)
+
+Dictionary names (Short description)<br />
 •	results[“results”][“bindings”] (results of SPARQL query prior to cleaning/manipulating)<br />
 •	dict_wikipedia (wikipedia articles taken directly from wptools, prior to cleaning/manipulating)<br />
 •	lake_dict (Wikidata and Wikipedia U.S. Lakes, created from results of SPARQL query)<br />
-•	lake_dict[‘wikidata_entries’]<br />
-•	lake_dict[‘wikidata_missing_properties’]<br />
-•	lake_dict[‘no_wikipedia_entries’]<br />
-•	lake_dict[‘wikipedia_entries’]<br />
+   •	lake_dict[‘wikidata_entries’]<br />
+   •	lake_dict[‘wikidata_missing_properties’]<br />
+   •	lake_dict[‘no_wikipedia_entries’]<br />
+   •	lake_dict[‘wikipedia_entries’]<br />
 •	lake_properties_not_matching (comparison mismatches from Wikidata and Wikipedia U.S. lakes)<br />
-•	lake_properties_not_matching[‘wikidata’]<br />
-•	lake_properties_not_matching[‘wikipedia’]<br />
+   •	lake_properties_not_matching[‘wikidata’]<br />
+   •	lake_properties_not_matching[‘wikipedia’]<br />
 •	bad_name (list containing names of lakes that wp.tools could not process, and thus were skipped)<br />
-
 
 Future Scope:<br />
 Moving forward, the two most pressing matters would be dealing with the special characters when using wptools to parse Wikipedia infoboxes, and finishing the comparison of all of the lake properties. Beyond that, searching through other Wikipedia’s abroad would be another goal. Also, within Wikipedia, I would need to verify that all edge cases and infobox templates were considered. Lastly, the SPARQL query itself should probably be worked on, to also gather more edge cases that I did not have an opportunity to explore. Also, my code is not easily readable, and I do recognize that. The use of several functions for the various aspects of the code would make it much cleaner and readable to others, but within the time constraints I was not able to accomplish that.
